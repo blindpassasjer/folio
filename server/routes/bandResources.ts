@@ -82,29 +82,33 @@ export function buildBandCrudRouter<Row extends { bandId: string | null }, Api>(
         res.status(400).json({ error: 'id is required.' });
         return;
       }
-      // The upsert below keys on the primary `id` alone, so a caller supplying an id that
-      // already belongs to another band would otherwise clobber (and reassign) that row.
-      // Reject that here — editor role only authorizes writes within the caller's own band.
-      const conflicting = (await db
-        .select({ existingBandId: bandIdColumn })
-        .from(table)
-        .where(eq(idColumn, id))
-        .limit(1)) as { existingBandId: string | null }[];
-      if (conflicting[0] && conflicting[0].existingBandId !== req.params.bandId) {
-        res.status(409).json({ error: `That ${resourceKey} id is already in use.` });
-        return;
-      }
+      // IDs originate in the client because the offline/demo data layer shares the same wire
+      // format. Look up a conflicting ID globally before deciding whether this is a create or
+      // an update. Scoping this lookup to the requested band and then using ON CONFLICT UPDATE
+      // would let a member of one band move/overwrite another band's row if they learned its ID.
       const prior = (await db
         .select()
         .from(table)
-        .where(and(eq(idColumn, id), eq(bandIdColumn, req.params.bandId)))
+        .where(eq(idColumn, id))
         .limit(1)) as Row[];
+
+      if (prior[0] && prior[0].bandId !== req.params.bandId) {
+        // Do not reveal which other band owns the ID.
+        res.status(409).json({ error: `${resourceKey} id is unavailable.` });
+        return;
+      }
+
       const values = fromBody(body, id, req.params.bandId);
-      const [row] = (await db
-        .insert(table)
-        .values(values)
-        .onConflictDoUpdate({ target: idColumn, set: values })
-        .returning()) as Row[];
+      const [row] = prior[0]
+        ? (await db
+            .update(table)
+            .set(values)
+            .where(and(eq(idColumn, id), eq(bandIdColumn, req.params.bandId)))
+            .returning()) as Row[]
+        : (await db
+            .insert(table)
+            .values(values)
+            .returning()) as Row[];
       res.json({ [resourceKey]: toApi(row) });
       await runAfterWrite(afterWrite, {
         kind: prior[0] ? 'update' : 'create',
@@ -133,7 +137,7 @@ export function buildBandCrudRouter<Row extends { bandId: string | null }, Api>(
       const [row] = (await db
         .update(table)
         .set(values)
-        .where(eq(idColumn, req.params.id))
+        .where(and(eq(idColumn, req.params.id), eq(bandIdColumn, req.params.bandId)))
         .returning()) as Row[];
       res.json({ [resourceKey]: toApi(row) });
       await runAfterWrite(afterWrite, { kind: 'update', row, prevRow: existing[0], req });
@@ -162,7 +166,9 @@ export function buildBandCrudRouter<Row extends { bandId: string | null }, Api>(
           console.error(`beforeDelete hook failed for band ${resourceKey}:`, err);
         }
       }
-      await db.delete(table).where(eq(idColumn, req.params.id));
+      await db
+        .delete(table)
+        .where(and(eq(idColumn, req.params.id), eq(bandIdColumn, req.params.bandId)));
       res.json({});
     } catch (err) {
       console.error(`Failed to delete band ${resourceKey}:`, err);
