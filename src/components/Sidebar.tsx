@@ -902,6 +902,18 @@ export default function Sidebar({ open, mobile = false, onNavigate, onClose }: P
         </div>
       </div>
       )}
+
+      <div className="sidebar-footer">
+        <a
+          className="sidebar-version"
+          href="https://github.com/blindpassasjer/gigboy/blob/main/CHANGELOG.md"
+          target="_blank"
+          rel="noreferrer"
+          title="View changelog"
+        >
+          v{__APP_VERSION__}
+        </a>
+      </div>
     </aside>
     </div>
   );

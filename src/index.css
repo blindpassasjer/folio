@@ -12502,6 +12502,24 @@ input.stageplot-legend-number:focus {
   margin: 0;
 }
 
+.sidebar-footer {
+  margin-top: auto;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar-version {
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--muted) 65%, transparent);
+  text-decoration: none;
+}
+
+.sidebar-version:hover {
+  color: var(--muted);
+}
+
 .press-kit-toolbar {
   display: flex;
   flex-wrap: wrap;

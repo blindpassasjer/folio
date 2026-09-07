@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { createRequire } from 'node:module'
+
+const { version: APP_VERSION } = createRequire(import.meta.url)('./package.json')
 
 const VENDOR_CHUNK_RULES: Array<{ chunk: string; packages: string[] }> = [
   {
@@ -97,6 +100,9 @@ function resolveDevOrigin() {
 const devOrigin = resolveDevOrigin()
 
 export default defineConfig(({ command }) => ({
+  define: {
+    __APP_VERSION__: JSON.stringify(APP_VERSION),
+  },
   plugins: [
     react(),
     VitePWA({
