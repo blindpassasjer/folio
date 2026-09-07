@@ -2207,10 +2207,16 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   flex-direction: column;
   gap: .55rem;
-  padding: .7rem;
-  border: 1px solid var(--song-item-border);
-  border-radius: 12px;
-  background: var(--song-toolbar-elevated-bg);
+  padding: .35rem 0 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.song-toolbar-section + .song-toolbar-section {
+  margin-top: .35rem;
+  padding-top: .75rem;
+  border-top: 1px solid color-mix(in srgb, var(--song-item-border) 60%, transparent);
 }
 
 .song-toolbar-section-head {
@@ -2224,11 +2230,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-toolbar-section-title {
   display: inline-flex;
   align-items: center;
-  gap: .35rem;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: .02em;
-  color: var(--song-item-chip-text);
+  gap: .4rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--song-item-muted);
   text-transform: uppercase;
 }
 
@@ -6267,7 +6273,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: var(--sidebar-width);
   box-shadow: var(--shadow);
   border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -6645,11 +6650,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .sidebar-section-toggle .sidebar-section-title {
   flex: 1;
-  font-size: inherit;
-  font-weight: inherit;
-  text-transform: none;
-  letter-spacing: normal;
-  color: inherit;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -12490,9 +12495,10 @@ input.stageplot-legend-number:focus {
 /* ── Press Kit ───────────────────────────────────────────────────────────── */
 
 .sidebar-empty-hint {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  padding: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: color-mix(in srgb, var(--muted) 78%, transparent);
+  padding: 0.15rem 0.75rem 0.3rem;
   margin: 0;
 }
 
