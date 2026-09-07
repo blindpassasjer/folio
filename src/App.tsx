@@ -198,7 +198,7 @@ function AppContent() {
           toastOptions={{
             style: {
               border: '1px solid var(--border)',
-              borderRadius: '10px',
+              borderRadius: 'var(--radius)',
               background: 'var(--surface)',
               color: 'var(--text)',
               boxShadow: 'var(--shadow)',

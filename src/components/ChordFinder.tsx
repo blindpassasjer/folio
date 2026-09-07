@@ -391,7 +391,7 @@ function InteractivePiano({ activePCs, onToggle }: PianoProps) {
             height: WKH,
             background: activePCs.has(pc) ? ACCENT : 'var(--chord-finder-white-key, #fff)',
             border: '1px solid #ccc',
-            borderRadius: '0 0 4px 4px',
+            borderRadius: '0 0 var(--radius-xs) var(--radius-xs)',
             cursor: 'pointer',
           }}
           onClick={() => onToggle(pc)}
@@ -406,7 +406,7 @@ function InteractivePiano({ activePCs, onToggle }: PianoProps) {
             width: BKW,
             height: BKH,
             background: activePCs.has(pc) ? ACCENT : 'var(--chord-finder-black-key, #222)',
-            borderRadius: '0 0 3px 3px',
+            borderRadius: '0 0 var(--radius-xs) var(--radius-xs)',
             zIndex: 1,
             cursor: 'pointer',
           }}

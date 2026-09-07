@@ -450,7 +450,7 @@ function PianoDiagram({ activeNotes }: { activeNotes: Set<number> }) {
             height: WKH,
             background: activeNotes.has(note) ? ACCENT : '#fff',
             border: '1px solid #ccc',
-            borderRadius: '0 0 4px 4px',
+            borderRadius: '0 0 var(--radius-xs) var(--radius-xs)',
           }} />
           );
         })
@@ -466,7 +466,7 @@ function PianoDiagram({ activeNotes }: { activeNotes: Set<number> }) {
             width: BKW,
             height: BKH,
             background: activeNotes.has(note) ? ACCENT : '#222',
-            borderRadius: '0 0 3px 3px',
+            borderRadius: '0 0 var(--radius-xs) var(--radius-xs)',
             zIndex: 1,
           }} />
           );

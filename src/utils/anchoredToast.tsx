@@ -3,7 +3,7 @@ import { getActiveToastAnchor, getAnchoredToastStyle } from './toastAnchor';
 
 const toastCardStyle = {
   border: '1px solid var(--border)',
-  borderRadius: '10px',
+  borderRadius: 'var(--radius)',
   background: 'var(--surface)',
   color: 'var(--text)',
   boxShadow: 'var(--shadow)',
@@ -64,7 +64,7 @@ function showAnchoredToast(message: string | React.ReactNode, options?: Anchored
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
                 padding: '0.3rem 0.5rem',
-                borderRadius: '4px',
+                borderRadius: 'var(--radius-xs)',
                 cursor: 'pointer',
               }}
               onMouseEnter={(e) => {

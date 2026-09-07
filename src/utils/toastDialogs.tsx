@@ -5,7 +5,7 @@ import { getActiveToastAnchor, getAnchoredToastStyle } from './toastAnchor';
 
 const toastCardStyle = {
   border: '1px solid var(--border)',
-  borderRadius: '10px',
+  borderRadius: 'var(--radius)',
   background: 'var(--surface)',
   color: 'var(--text)',
   boxShadow: 'var(--shadow)',
@@ -23,7 +23,7 @@ const toastActionsStyle = {
 
 const toastBtnStyle = {
   border: '1px solid var(--border)',
-  borderRadius: '7px',
+  borderRadius: 'var(--radius-sm)',
   background: 'var(--bg)',
   color: 'var(--text)',
   padding: '0.3rem 0.65rem',
@@ -124,7 +124,7 @@ function PromptToast({
             width: '100%',
             marginTop: '0.45rem',
             border: '1px solid var(--border)',
-            borderRadius: '6px',
+            borderRadius: 'var(--radius-sm)',
             background: 'var(--surface)',
             color: 'var(--text)',
             padding: '0.35rem 0.5rem',

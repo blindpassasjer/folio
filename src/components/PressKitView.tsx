@@ -987,7 +987,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                     {presaveUrls.map((url) => {
                       const selected = selectedPresaveUrls.includes(url);
                       return (
-                        <li key={url} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', padding: '0.4rem 0.6rem' }}>
+                        <li key={url} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--surface)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', padding: '0.4rem 0.6rem' }}>
                           {canEdit && (
                             <input
                               type="checkbox"
@@ -1049,7 +1049,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                   onClick={() => document.getElementById('pk-img-input')?.click()}
                   style={{
                     border: dropActive ? '2px solid var(--bands-hue)' : '2px dashed var(--bands-hue)',
-                    borderRadius: '10px',
+                    borderRadius: 'var(--radius)',
                     padding: '0.75rem',
                     background: dropActive ? 'var(--bands-hue-soft)' : 'color-mix(in srgb, var(--bands-hue) 8%, var(--surface))',
                     cursor: 'pointer',
@@ -1083,7 +1083,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                         data-image-tile-id={img.id}
                         style={{
                           position: 'relative',
-                          borderRadius: '8px',
+                          borderRadius: 'var(--radius)',
                           overflow: 'hidden',
                           border: '1px solid var(--border)',
                           opacity: draggingImageId === img.id ? 0.5 : 1,
@@ -1118,7 +1118,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                               background: 'rgba(0,0,0,0.55)',
                               color: '#fff',
                               border: 'none',
-                              borderRadius: '4px',
+                              borderRadius: 'var(--radius-xs)',
                               cursor: 'grab',
                               touchAction: 'none',
                               zIndex: 1,
@@ -1153,7 +1153,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
               {pagedImageAssets.map((img) => {
                 const attached = kitImageIds.includes(img.id);
                 return (
-                  <div key={img.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', background: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                  <div key={img.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', background: 'var(--surface)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', overflow: 'hidden' }}>
                     <div style={{ position: 'relative' }}>
                       <button
                         type="button"
@@ -1170,7 +1170,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                         />
                       </button>
                       {canEdit && (
-                        <label style={{ position: 'absolute', top: '6px', left: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1.4rem', height: '1.4rem', background: 'rgba(0,0,0,0.5)', borderRadius: '4px', cursor: 'pointer', zIndex: 1 }}>
+                        <label style={{ position: 'absolute', top: '6px', left: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1.4rem', height: '1.4rem', background: 'rgba(0,0,0,0.5)', borderRadius: 'var(--radius-xs)', cursor: 'pointer', zIndex: 1 }}>
                           <input
                             type="checkbox"
                             checked={attached}
@@ -1283,7 +1283,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                       const media = parsePressKitMedia(url);
                       const selected = selectedVideoUrls.includes(url);
                       return (
-                        <div key={url} style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', background: 'var(--surface)', borderRadius: '8px', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                        <div key={url} style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', background: 'var(--surface)', borderRadius: 'var(--radius)', border: '1px solid var(--border)', overflow: 'hidden' }}>
                           <div style={{ position: 'relative' }}>
                             {media ? (
                               media.provider === 'spotify' || media.provider === 'soundcloud' ? (
@@ -1311,7 +1311,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                               <div style={{ aspectRatio: '16 / 9', display: 'grid', placeItems: 'center', color: 'var(--muted)' }}>Unsupported link</div>
                             )}
 
-                            <label style={{ position: 'absolute', top: '6px', left: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1.4rem', height: '1.4rem', background: 'rgba(0,0,0,0.5)', borderRadius: '4px', cursor: canEdit ? 'pointer' : 'default', zIndex: 1 }}>
+                            <label style={{ position: 'absolute', top: '6px', left: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1.4rem', height: '1.4rem', background: 'rgba(0,0,0,0.5)', borderRadius: 'var(--radius-xs)', cursor: canEdit ? 'pointer' : 'default', zIndex: 1 }}>
                               <input
                                 type="checkbox"
                                 checked={selected}

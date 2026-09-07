@@ -285,25 +285,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   overflow: visible;
 }
 
-.verify-email-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  padding: 0.6rem 1rem;
-  background: var(--chord-bg);
-  color: var(--text);
-  font-size: 0.88rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.verify-email-banner-actions {
-  display: flex;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
 .topbar {
   background: var(--surface);
   background: color-mix(in srgb, var(--surface) 85%, transparent);
@@ -905,8 +886,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   z-index: 89;
 }
 
-.app-status,
-.app-notice {
+.app-status {
   width: min(860px, calc(100% - 2rem));
   margin: 1rem auto 0;
   border: 1px solid var(--border);
@@ -919,11 +899,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin-top: 4rem;
   padding: 1rem 1.25rem;
   text-align: center;
-  color: var(--muted);
-}
-
-.app-notice {
-  padding: .85rem 1rem;
   color: var(--muted);
 }
 
@@ -947,47 +922,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 /* ─── Legal pages ───────────────────────────────────────────────────────────── */
-.legal-page {
-  width: min(760px, calc(100% - 2rem));
-  margin: 2rem auto 3rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.legal-page h1 {
-  margin-bottom: .25rem;
-}
-
-.legal-page .legal-updated {
-  color: var(--muted);
-  font-size: .85rem;
-  margin-bottom: 1.5rem;
-}
-
-.legal-page h2 {
-  margin-top: 2rem;
-  margin-bottom: .5rem;
-  font-size: 1.1rem;
-}
-
-.legal-page p,
-.legal-page li {
-  color: var(--text);
-}
-
-.legal-page ul {
-  padding-left: 1.25rem;
-}
-
-.legal-page .legal-draft-notice {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  padding: .85rem 1rem;
-  color: var(--muted);
-  font-size: .85rem;
-  margin-bottom: 1.5rem;
-}
 
 /* ─── Back link ─────────────────────────────────────────────────────────────── */
 .back-link {
@@ -1276,46 +1210,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: 0 1.5rem;
 }
 
-.list-appearance-editor {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: .55rem;
-  margin: 0 1.5rem;
-  padding: .65rem .75rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg);
-}
-
-.list-appearance-group {
-  display: flex;
-  flex-direction: column;
-  gap: .35rem;
-}
-
-.list-appearance-label {
-  font-size: .75rem;
-  color: var(--muted);
-}
-
-.list-appearance-field {
-  display: inline-flex;
-  flex-direction: column;
-  gap: .22rem;
-  font-size: .75rem;
-  color: var(--muted);
-}
-
-.list-appearance-field input[type="color"] {
-  width: 2.2rem;
-  height: 2rem;
-  padding: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-}
-
 .color-swatch-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1523,31 +1417,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-color: color-mix(in srgb, var(--song-item-accent) 45%, var(--song-item-border));
   box-shadow: 0 2px 10px color-mix(in srgb, var(--song-item-accent) 28%, transparent);
 }
-.song-drag-handle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  padding: .35rem;
-  border: 1px dashed transparent;
-  border-radius: var(--radius);
-  background: transparent;
-  color: var(--muted);
-  cursor: grab;
-  flex-shrink: 0;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
-  transition: color .15s, background .15s, border-color .15s;
-}
-
-.song-drag-handle:hover {
-  color: var(--accent);
-  background: var(--bg);
-  border-color: var(--border);
-}
-
-.song-drag-handle:active { cursor: grabbing; }
 
 /* ─── Drag-and-drop active states ───────────────────────────────────────────── */
 .song-card.is-dragging,
@@ -1702,13 +1571,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-wrap: wrap;
 }
 
-.song-reorder-dropzone {
-  min-height: 1rem;
-  border: 1px dashed transparent;
-  border-radius: var(--radius);
-  transition: border-color .15s, background .15s;
-}
-
 .song-reorder-dropzone.active {
   border-color: var(--accent);
   background: color-mix(in srgb, var(--accent) 10%, transparent);
@@ -1811,40 +1673,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: #0b5651;
   border-color: #67bdb6;
   background: #d8f5f1;
-}
-
-.song-color-picker-wrap {
-  position: relative;
-}
-
-.song-color-picker {
-  position: absolute;
-  top: calc(100% + .35rem);
-  right: 0;
-  z-index: 20;
-  width: 8.8rem;
-  padding: .45rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-}
-
-.song-color-picker-clear {
-  width: 100%;
-  text-align: left;
-  padding: .28rem .4rem;
-  border-radius: var(--radius-sm);
-  font-size: .74rem;
-  color: var(--muted);
-}
-
-.song-color-picker-clear:hover {
-  background: var(--bg);
-  color: var(--text);
 }
 
 .song-action-btn--delete {
@@ -2137,8 +1965,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .song-list-sticky > .setlist-header,
   .song-list-sticky > .press-kit-toolbar,
-  .song-list-controls,
-  .list-appearance-editor {
+  .song-list-controls {
     margin-left: calc(1.1rem + var(--safe-left));
     margin-right: calc(1.1rem + var(--safe-right));
   }
@@ -2717,13 +2544,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
   background: var(--chord-bg);
-}
-
-.song-notes-control {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .28rem;
 }
 
 .song-notes-draw-toggle {
@@ -4105,18 +3925,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   white-space: pre;
   color: var(--text);
   display: block;
-}
-
-.tab-guide-line {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.tab-guide-emoji {
-  display: inline-block;
-  width: 1ch;
-  text-align: center;
-  overflow: visible;
 }
 
 .tab-playback-controls {
@@ -8199,10 +8007,6 @@ input, select, textarea { font: inherit; color: var(--text); }
     padding: 0 calc(1rem + var(--safe-right)) 0 calc(1rem + var(--safe-left));
   }
 
-  .list-appearance-editor {
-    margin: 0 calc(1rem + var(--safe-right)) 0 calc(1rem + var(--safe-left));
-  }
-
   .song-list-controls > * {
     flex: 1 1 220px;
   }
@@ -8593,17 +8397,8 @@ input, select, textarea { font: inherit; color: var(--text); }
 /* ─── Touch/coarse-pointer: drag handle and song picker improvements ────────── */
 @media (pointer: coarse) {
   /* Larger drag handle so it's easy to grab on finger on tablet or phone */
-  .song-drag-handle {
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    padding: .5rem;
-  }
 
   /* Larger drag handle icon */
-  .song-drag-handle svg {
-    width: 20px;
-    height: 20px;
-  }
 
   /* Bottom-sheet song picker: slides up from the bottom on touch devices */
   .song-picker-overlay {
@@ -9606,17 +9401,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin-top: .45rem;
 }
 
-.band-settings-name-row {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-}
-
-.band-settings-name-row input {
-  flex: 1;
-  min-width: 0;
-}
-
 .bands-field-counter {
   font-weight: 400;
   opacity: .7;
@@ -9853,37 +9637,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-/* Settings modal tabs */
-.band-settings-tabs {
-  display: flex;
-  gap: .35rem;
-  padding: 0 1.25rem .75rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.band-settings-tab {
-  padding: .35rem .75rem;
-  border-radius: var(--radius-full);
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--muted);
-  font-size: .85rem;
-  cursor: pointer;
-  transition: background .15s, color .15s;
-}
-
-.band-settings-tab:hover {
-  background: var(--bands-soft-bg);
-  color: var(--bands-hue);
-}
-
-.band-settings-tab.active {
-  background: var(--bands-hue-soft);
-  color: var(--bands-hue);
-  border-color: color-mix(in srgb, var(--bands-hue) 28%, var(--border));
-  font-weight: 600;
 }
 
 .bands-card,
@@ -10958,31 +10711,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .8rem;
 }
 
-.tech-rider-page-header {
-  margin-bottom: .1rem;
-}
-
-.tech-rider-list-card {
-  display: flex;
-  flex-direction: column;
-  gap: .6rem;
-}
-
-.tech-rider-list-item {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  justify-content: space-between;
-}
-
-.tech-rider-list-item .songlist-item-title {
-  min-width: 0;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* The canvas now holds a fixed aspect ratio (see .stageplot-stage), so at
    typical page widths it alone fills the row — leaving no real room for the
    channel-list column beside it. Stack the legend below the canvas instead
@@ -11655,45 +11383,6 @@ input.stageplot-legend-number:focus {
 }
 
 /* ── PlanGate / UpgradePrompt ─────────────────────────────── */
-.upgrade-prompt {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  padding: .45rem .75rem;
-  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
-  border-radius: var(--radius);
-  font-size: .8rem;
-  color: var(--muted);
-  flex-wrap: wrap;
-}
-
-.upgrade-prompt__icon {
-  flex-shrink: 0;
-  color: var(--accent);
-}
-
-.upgrade-prompt__text {
-  flex: 1;
-  min-width: 0;
-}
-
-.upgrade-prompt__btn {
-  padding: .25rem .7rem;
-  border-radius: var(--radius-sm);
-  border: none;
-  background: var(--accent);
-  color: #fff;
-  font-size: .78rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity .15s;
-}
-
-.upgrade-prompt__btn:hover {
-  opacity: .88;
-}
 
 /* Locked toolbar button */
 .song-toolbar-tool-btn--locked {
