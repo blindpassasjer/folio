@@ -2213,7 +2213,8 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: transparent;
 }
 
-.song-toolbar-section + .song-toolbar-section {
+.song-toolbar-section + .song-toolbar-section,
+.song-toolbar-section + .song-toolbar-row--actions {
   margin-top: .35rem;
   padding-top: .75rem;
   border-top: 1px solid color-mix(in srgb, var(--song-item-border) 60%, transparent);
@@ -6650,11 +6651,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .sidebar-section-toggle .sidebar-section-title {
   flex: 1;
-  font-size: .72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  color: var(--muted);
+  font-size: inherit;
+  font-weight: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  color: inherit;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -12495,28 +12496,22 @@ input.stageplot-legend-number:focus {
 /* ── Press Kit ───────────────────────────────────────────────────────────── */
 
 .sidebar-empty-hint {
-  font-size: 0.72rem;
-  font-style: italic;
-  color: color-mix(in srgb, var(--muted) 78%, transparent);
-  padding: 0.15rem 0.75rem 0.3rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  padding: 0.25rem 0.75rem;
   margin: 0;
 }
 
-.sidebar-footer {
-  margin-top: auto;
-  padding: 0.5rem 0.75rem;
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar-version {
+.footer-version {
+  display: block;
+  margin-top: 0.35rem;
   font-size: 0.68rem;
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--muted) 65%, transparent);
   text-decoration: none;
 }
 
-.sidebar-version:hover {
+.footer-version:hover {
   color: var(--muted);
 }
 

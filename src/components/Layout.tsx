@@ -632,6 +632,15 @@ export default function Layout({ children }: Props) {
           {children}
           <footer className="footer">
             From Norway {'<3'} with chords
+            <a
+              className="footer-version"
+              href="https://github.com/blindpassasjer/gigboy/blob/main/CHANGELOG.md"
+              target="_blank"
+              rel="noreferrer"
+              title="View changelog"
+            >
+              v{__APP_VERSION__}
+            </a>
           </footer>
         </main>
         {renderContextFab()}
