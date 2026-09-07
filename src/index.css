@@ -178,8 +178,7 @@ textarea {
     .sidebar-list-delete,
     .song-action-btn,
     .song-picker-close,
-    .btn-primary,
-    .btn-secondary,
+    .btn,
     .setlist-action-btn,
     .concert-nav-btn,
     .fab-add-song,
@@ -4531,7 +4530,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .recorder-idle-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
 
-.btn-primary,
 .setlist-action-btn,
 .song-picker-add-btn,
 .concert-nav-btn {
@@ -4553,7 +4551,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   transition: background .15s, color .15s, border-color .15s, box-shadow .15s, transform .08s;
 }
 
-.btn-primary:hover,
 .setlist-action-btn:hover,
 .song-picker-add-btn:hover {
   background: linear-gradient(135deg, var(--accent-h), color-mix(in srgb, var(--accent-h) 80%, #003d99));
@@ -4561,7 +4558,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   transform: translateY(-1px);
 }
 
-.btn-primary:focus-visible,
 .setlist-action-btn:focus-visible,
 .song-picker-add-btn:focus-visible,
 .concert-nav-btn:focus-visible {
@@ -4569,7 +4565,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
-.btn-primary:disabled,
 .setlist-action-btn:disabled,
 .song-picker-add-btn:disabled,
 .concert-nav-btn:disabled {
@@ -4577,15 +4572,15 @@ input, select, textarea { font: inherit; color: var(--text); }
   opacity: .6;
 }
 
-.btn-primary {
-  padding: .6rem 1.2rem;
-  font-size: .95rem;
-}
-
-.btn-secondary {
+/* ─── Button (canonical) ─────────────────────────────────────────────────────────
+   Shared vocabulary for the <Button> component (src/components/ui/Button.tsx).
+   The bespoke *-btn classes (setlist-action-btn, icon-btn, …) are not folded in
+   yet — migrate those call sites to .btn + modifiers over time. */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: .4rem;
   min-height: 2.25rem;
   padding: .55rem 1rem;
   border: 1px solid var(--border);
@@ -4596,23 +4591,74 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-weight: 600;
   line-height: 1;
   letter-spacing: .01em;
+  text-decoration: none;
+  cursor: pointer;
   transition: background .15s, color .15s, border-color .15s, box-shadow .15s, transform .08s;
 }
 
-.btn-secondary:hover {
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.btn--secondary:hover:not(:disabled) {
   background: color-mix(in srgb, var(--surface) 40%, var(--bg));
   border-color: color-mix(in srgb, var(--border) 60%, var(--muted));
   transform: translateY(-1px);
 }
 
-.btn-secondary:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent);
+.btn--primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 80%, #003d99));
+  color: var(--accent-contrast);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
-.btn-secondary:disabled {
-  cursor: not-allowed;
-  opacity: .6;
+.btn--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--accent-h), color-mix(in srgb, var(--accent-h) 80%, #003d99));
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 45%, transparent);
+  transform: translateY(-1px);
+}
+
+.btn--danger {
+  border-color: transparent;
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--danger) 88%, #000);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: transparent;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--surface) 40%, var(--bg));
+}
+
+.btn--sm {
+  min-height: 1.9rem;
+  padding: .35rem .7rem;
+  font-size: .82rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--icon {
+  padding: .45rem;
+  min-height: 0;
 }
 
 /* ─── Add Song Form ──────────────────────────────────────────────────────────── */

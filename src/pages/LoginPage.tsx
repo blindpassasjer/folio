@@ -4,6 +4,7 @@ import type { Location } from 'react-router-dom';
 import { Music2, ListMusic, Users, MonitorSpeaker, Newspaper, Activity, type LucideIcon } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import BrandMark from '../components/BrandMark';
+import { Button } from '../components/ui/Button';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const REPO_URL = 'https://github.com/blindpassasjer/gigboy';
@@ -266,9 +267,9 @@ export default function LoginPage() {
               />
             </div>
             {error && <p className="login-error">{error}</p>}
-            <button type="submit" className="btn-primary login-submit" disabled={busy}>
+            <Button type="submit" variant="primary" className="login-submit" disabled={busy}>
               {busy ? 'Signing in...' : 'Sign in'}
-            </button>
+            </Button>
           </form>
 
           <footer className="footer">

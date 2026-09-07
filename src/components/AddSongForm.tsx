@@ -5,6 +5,7 @@ import { ChevronDown, FileUp, Redo2, Save, Undo2, Wand2 } from 'lucide-react';
 import toast from '../utils/anchoredToast';
 import { generateId } from '../lib/uuid';
 import type { Song } from '../types';
+import { Button } from './ui/Button';
 import ChordDisplay from './ChordDisplay';
 import ChordProToolbar from './ChordProToolbar';
 import TabDisplay from './TabDisplay';
@@ -654,9 +655,9 @@ const [tempo, setTempo] = useState(initialSong?.tempo !== undefined ? String(ini
                 {preview ? 'Edit' : 'Preview'}
               </button>
               {mode === 'add' && (
-                <button type="submit" className="btn-primary form-submit-inline">
-                  <Save size={14} /> Save Song
-                </button>
+                <Button type="submit" variant="primary" className="form-submit-inline" icon={<Save size={14} />}>
+                  Save Song
+                </Button>
               )}
               {mode === 'edit' && !preview && (
                 <>
@@ -779,9 +780,9 @@ const [tempo, setTempo] = useState(initialSong?.tempo !== undefined ? String(ini
 
         {mode === 'add' && (
           <div className="form-actions">
-            <button type="submit" className="btn-primary">
-              <Save size={16} /> Save Song
-            </button>
+            <Button type="submit" variant="primary" icon={<Save size={16} />}>
+              Save Song
+            </Button>
           </div>
         )}
       </form>

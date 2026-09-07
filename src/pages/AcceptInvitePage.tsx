@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import BrandMark from '../components/BrandMark';
+import { Button } from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
 import { dataClient } from '../lib/dataClient';
 import type { InviteContext } from '../lib/dataClient/types';
@@ -199,9 +200,9 @@ export default function AcceptInvitePage() {
             />
           </div>
           {error && <p className="login-error">{error}</p>}
-          <button type="submit" className="btn-primary login-submit" disabled={busy}>
+          <Button type="submit" variant="primary" className="login-submit" disabled={busy}>
             {busy ? 'Creating account...' : 'Create account'}
-          </button>
+          </Button>
         </form>
 
         <footer className="footer">From Norway {'<3'} with chords</footer>

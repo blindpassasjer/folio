@@ -7,6 +7,7 @@ import { DarkModeProvider, useDarkModeContext } from './context/DarkModeContext'
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { BandsProvider } from './context/BandsContext';
 import { isDynamicImportFailure, recoverFromDynamicImportFailure, forceReloadAfterChunkFailure } from './lib/chunkRecovery';
+import { Button } from './components/ui/Button';
 
 const Layout = lazy(() => import('./components/Layout'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
@@ -66,12 +67,12 @@ function RouterErrorFallback() {
           : 'Something went wrong while opening this page. Try reloading the app.'}
       </p>
       <div style={{ display: 'flex', gap: '0.6rem', marginTop: '1rem', flexWrap: 'wrap' }}>
-        <button type="button" className="btn-primary" onClick={handleReload}>
+        <Button variant="primary" onClick={handleReload}>
           Reload app
-        </button>
-        <button type="button" className="btn-secondary" onClick={() => window.location.assign('/profile')}>
+        </Button>
+        <Button onClick={() => window.location.assign('/profile')}>
           Go to profile
-        </button>
+        </Button>
       </div>
       {!chunkFailure && errorMessage && (
         <p style={{ marginTop: '0.9rem', fontSize: '0.88rem', opacity: 0.9 }}>{errorMessage}</p>

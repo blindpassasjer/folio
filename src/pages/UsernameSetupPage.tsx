@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react';
 import BrandMark from '../components/BrandMark';
+import { Button } from '../components/ui/Button';
 import { useAuth } from '../context/AuthContext';
 import { normalizeUsername, validateUsername } from '../lib/userProfiles';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -57,12 +58,12 @@ export default function UsernameSetupPage() {
             />
           </div>
           {error ? <p className="login-error">{error}</p> : null}
-          <button type="submit" className="btn-primary login-submit" disabled={busy}>
+          <Button type="submit" variant="primary" className="login-submit" disabled={busy}>
             {busy ? 'Saving username…' : 'Continue'}
-          </button>
-          <button type="button" className="btn-secondary login-submit" onClick={() => { void logout(); }} disabled={busy}>
+          </Button>
+          <Button className="login-submit" onClick={() => { void logout(); }} disabled={busy}>
             Sign out
-          </button>
+          </Button>
         </form>
         <footer className="footer">From Norway {'<3'} with chords</footer>
       </div>
