@@ -59,7 +59,7 @@
   --radius:     8px;
   --radius-lg:  12px;
   --radius-xl:  16px;
-  --radius-full: 999px;
+  --radius-pill: 999px;
   --shadow:     0 1px 3px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.06);
   --shadow-md:  0 4px 16px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.06);
   --shadow-lg:  0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.08);
@@ -409,7 +409,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   height: .42rem;
   flex: 1;
   min-width: 72px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--surface) 45%, var(--bg));
   overflow: hidden;
 }
@@ -485,7 +485,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 1.15rem;
   height: 1.15rem;
   padding: 0 .28rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -582,7 +582,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex: none;
   width: 2.6rem;
   height: 2.6rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(138, 83, 34, .35);
   border: 2px solid color-mix(in srgb, #b9752f 55%, transparent);
@@ -742,14 +742,14 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .45rem;
   padding: .28rem .5rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
 }
 
 .user-avatar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
   border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
@@ -938,7 +938,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .25rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
   font-size: .78rem;
@@ -951,7 +951,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-block;
   background: var(--border);
   color: var(--muted);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .1rem .5rem;
   font-size: .75rem;
 }
@@ -960,7 +960,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .2rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
   font-size: .72rem;
@@ -1098,7 +1098,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   width: 1.8rem;
   height: 1.8rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   color: var(--muted);
   border: 1px solid transparent;
 }
@@ -1133,7 +1133,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .5rem;
   padding: .3rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -1143,7 +1143,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .35rem;
   padding: .45rem .75rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   color: var(--muted);
   transition: background .15s, color .15s;
 }
@@ -1222,7 +1222,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .color-swatch-btn {
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.55);
   transition: transform .1s, box-shadow .12s;
@@ -1388,7 +1388,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   right: .45rem;
   height: 2px;
   background: var(--accent);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   animation: drop-insert-line .14s ease-out;
 }
 
@@ -1521,7 +1521,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   right: .5rem;
   height: 2px;
   background: var(--accent);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   animation: drop-insert-line .14s ease-out;
 }
 
@@ -2264,7 +2264,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .capo-badge, .meta-pill {
   background: var(--chord-bg);
   color: var(--accent);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .15rem .6rem;
   font-size: .78rem;
   font-weight: 600;
@@ -2275,7 +2275,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .45rem;
   padding: .2rem .35rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--surface) 70%, var(--bg));
 }
@@ -2285,7 +2285,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .2rem;
   width: 1.85rem;
   height: 1.85rem;
@@ -2307,7 +2307,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .25rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .2rem .5rem;
   font-size: .72rem;
   font-weight: 600;
@@ -2327,7 +2327,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .2rem .35rem;
   color: var(--muted);
   background: var(--surface);
@@ -2355,7 +2355,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .visual-metronome-light {
   width: 1.1rem;
   height: 1.1rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--muted) 45%, transparent);
   opacity: .45;
   flex-shrink: 0;
@@ -2447,7 +2447,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .visual-metronome-beat {
   width: .46rem;
   height: .46rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--muted) 35%, transparent);
   transition: transform .14s ease, background .14s ease, box-shadow .14s ease;
 }
@@ -2516,7 +2516,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex: 0 0 auto;
   white-space: nowrap;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   min-height: 2.5rem;
   padding: .4rem .85rem;
   font-size: .8rem;
@@ -2630,20 +2630,20 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-view-header .song-toolbar-row--controls .transpose-control {
   border: 1px solid color-mix(in srgb, var(--song-header-accent) 28%, var(--song-item-border));
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--song-header-accent) 14%, var(--song-item-bg));
   padding: .12rem;
   overflow: hidden;
   gap: .12rem;
 }
 .song-view-header .song-toolbar-row--controls .transpose-btn {
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: transparent;
   border-color: transparent;
 }
 .song-view-header .song-toolbar-row--controls .instrument-toggle {
   border: 1px solid color-mix(in srgb, var(--song-header-accent) 28%, var(--song-item-border));
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--song-header-accent) 14%, var(--song-item-bg));
   overflow: hidden;
   padding: .12rem;
@@ -2662,7 +2662,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: center;
   min-height: 2.5rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: transparent;
   color: color-mix(in srgb, var(--song-header-accent) 56%, var(--song-item-text));
 }
@@ -2701,14 +2701,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .concert-tool-row .transpose-control {
   border: 1px solid color-mix(in srgb, var(--song-header-accent) 28%, var(--song-item-border));
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--song-header-accent) 14%, var(--song-item-bg));
   padding: .12rem;
   overflow: hidden;
   gap: .12rem;
 }
 .concert-tool-row .transpose-btn {
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: transparent;
   border-color: transparent;
 }
@@ -2721,7 +2721,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .concert-tool-row .instrument-toggle {
   border: 1px solid color-mix(in srgb, var(--song-header-accent) 28%, var(--song-item-border));
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--song-header-accent) 14%, var(--song-item-bg));
   overflow: hidden;
   padding: .12rem;
@@ -3006,7 +3006,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   position: relative;
   width: 100%;
   height: .66rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background:
     linear-gradient(to right,
       rgba(192,57,43,0.42) 0%,
@@ -3707,7 +3707,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .notes-save-status {
   font-size: .78rem;
   font-weight: 600;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .1rem .55rem;
 }
 
@@ -3831,7 +3831,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-size: .8rem;
   font-weight: 600;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--bg);
   color: var(--muted);
   transition: background .15s, color .15s, border-color .15s;
@@ -4123,7 +4123,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 1.5px;
   min-height: 12%;
   align-self: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--border) 68%, var(--muted));
   transition: background .08s ease;
 }
@@ -5402,7 +5402,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-glow {
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   filter: blur(44px);
   opacity: .22;
   mix-blend-mode: screen;
@@ -5429,7 +5429,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-ring {
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   opacity: .18;
   animation: login-ring-pulse ease-in-out infinite;
@@ -5455,7 +5455,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .login-spark {
   width: 6px;
   height: 6px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--accent) 74%, #ffffff);
   box-shadow: 0 0 22px color-mix(in srgb, var(--accent) 62%, #ffffff);
   opacity: 0;
@@ -5689,7 +5689,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   right: 0.45rem;
   width: 2rem;
   height: 2rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, white 25%, transparent);
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
@@ -6081,7 +6081,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   left: .45rem;
   right: .45rem;
   height: 2px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--list-accent);
   animation: drop-insert-line .14s ease-out;
 }
@@ -6158,7 +6158,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-size: .75rem;
   color: var(--muted);
   background: var(--bg);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: 0 .4rem;
   min-width: 1.4em;
   text-align: center;
@@ -6346,7 +6346,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   text-transform: uppercase;
   letter-spacing: .05em;
   padding: .1rem .35rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--accent) 15%, var(--surface));
   color: color-mix(in srgb, var(--accent) 78%, var(--text));
 }
@@ -6357,7 +6357,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin-left: auto;
   padding: 0 .4rem;
   background: var(--bg);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   min-width: 1.4em;
   text-align: center;
 }
@@ -6497,7 +6497,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .sidebar-storage-popup-bar {
   height: .32rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--surface) 45%, var(--bg));
   overflow: hidden;
 }
@@ -6825,7 +6825,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   list-style: none;
   margin: 0;
   height: 0;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   transition: height .12s ease, background .12s ease, box-shadow .12s ease;
 }
 
@@ -6867,7 +6867,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   left: 0;
   right: 0;
   height: 3px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--accent);
   animation: drop-insert-line .14s ease-out;
 }
@@ -6883,7 +6883,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   left: 0;
   right: 0;
   height: 3px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--accent);
   animation: drop-insert-line .14s ease-out;
 }
@@ -7390,7 +7390,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .35rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .35rem .75rem;
   font-size: .8rem;
   color: var(--muted);
@@ -7406,7 +7406,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .concert-session-toggle {
   display: inline-flex;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   overflow: hidden;
 }
 
@@ -7459,7 +7459,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .35rem;
   padding: .25rem;
   border: 1px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--surface) 75%, var(--bg));
 }
 
@@ -7716,7 +7716,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
   font-size: .72rem;
@@ -7782,7 +7782,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .5rem 1.05rem;
   min-width: 126px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, .14);
@@ -7814,7 +7814,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .concert-pedal-status {
   width: .58rem;
   height: .58rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: #dc2626;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
 }
@@ -7875,7 +7875,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--text);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   padding: .36rem .62rem;
   font-size: .78rem;
   box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
@@ -8469,7 +8469,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     display: block;
     width: 2.5rem;
     height: .28rem;
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-pill);
     background: var(--border);
     margin: .65rem auto .25rem;
     flex-shrink: 0;
@@ -9281,7 +9281,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .profile-invite-confirmation {
   flex-shrink: 0;
   padding: .35rem .65rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, #1f9d55 16%, var(--surface));
   border: 1px solid color-mix(in srgb, #1f9d55 30%, var(--border));
   color: #17693a;
@@ -9716,7 +9716,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-card-icon {
   width: 2.3rem;
   height: 2.3rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   display: grid;
   place-items: center;
   background: var(--bands-hue-soft);
@@ -9777,7 +9777,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .3rem;
   padding: .3rem .55rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--bands-hue-soft) 72%, var(--surface));
   border: 1px solid color-mix(in srgb, var(--bands-hue) 22%, var(--border));
   color: var(--bands-hue);
@@ -9795,7 +9795,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .45rem;
   border: 1px solid var(--bands-border);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: var(--surface);
   color: var(--bands-hue);
   padding: .45rem .8rem;
@@ -10158,7 +10158,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-setlist-band-logo {
   width: 1.65rem;
   height: 1.65rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   object-fit: cover;
   border: 1px solid var(--border, #e5e5e5);
   background: var(--surface, #fff);
@@ -10950,7 +10950,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   bottom: .35rem;
   transform: translateX(-50%);
   padding: .15rem .55rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
   background: color-mix(in srgb, var(--surface) 82%, #fff 18%);
   color: var(--muted);
@@ -11017,7 +11017,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .stageplot-item .stageplot-rotation-handle {
   left: 50%;
   top: -38px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   transform: translateX(-50%);
   cursor: grab;
 }
@@ -11057,7 +11057,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1.5px solid var(--surface);
   background: var(--muted);
   color: #fff;
@@ -11116,7 +11116,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .stageplot-item--selected .stageplot-instrument-icon--item {
   outline: 2px solid color-mix(in srgb, var(--accent) 65%, transparent);
   outline-offset: 4px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
 }
 
 .stageplot-item--public {
@@ -11146,7 +11146,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .4rem;
   padding: .3rem .55rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1px dashed color-mix(in srgb, var(--border) 85%, transparent);
   font-size: .78rem;
   font-weight: 600;
@@ -11301,7 +11301,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 18px;
   height: 1.5rem;
   padding: 0 3px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   border: 1.5px solid transparent;
   background: var(--muted);
   color: #fff;
@@ -11362,7 +11362,7 @@ input.stageplot-legend-number:focus {
   justify-content: center;
   padding: 0;
   border: 1.5px solid color-mix(in srgb, var(--muted) 50%, var(--border));
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-pill);
   background: transparent;
   cursor: pointer;
   transition: background .15s ease, border-color .15s ease;
