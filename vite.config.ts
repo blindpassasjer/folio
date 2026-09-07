@@ -79,8 +79,23 @@ function resolveAllowedHostFromProxyUri() {
   }
 }
 
+// A public dev origin served by a dedicated subdomain reverse-proxied straight to Vite
+// (no path prefix) — e.g. `VITE_DEV_ORIGIN=https://test.example.com npm run dev`. When set,
+// the dev server uses base '/', trusts that host, and points the HMR websocket at it so
+// live reload works through the proxy's TLS.
+function resolveDevOrigin() {
+  if (!process.env.VITE_DEV_ORIGIN) return null
+  try {
+    return new URL(process.env.VITE_DEV_ORIGIN)
+  } catch {
+    return null
+  }
+}
+
 // Set base to './' for GitHub Pages subdirectory deployment.
 // Override with VITE_BASE env var if deploying to a custom domain root.
+const devOrigin = resolveDevOrigin()
+
 export default defineConfig(({ command }) => ({
   plugins: [
     react(),
@@ -163,18 +178,31 @@ export default defineConfig(({ command }) => ({
   base:
     process.env.VITE_BASE ??
     (command === 'serve'
-      ? (process.env.VITE_DEV_BASE ?? resolveDevBaseFromProxyUri() ?? '/')
+      ? (devOrigin ? '/' : (process.env.VITE_DEV_BASE ?? resolveDevBaseFromProxyUri() ?? '/'))
       : (resolveDevBaseFromProxyUri() ?? '/')),
   server: {
+    host: true,
     allowedHosts: Array.from(
       new Set([
         'localhost',
         '127.0.0.1',
         'code.manriquez.no',
+        ...(devOrigin ? [devOrigin.hostname] : []),
         ...(process.env.VITE_DEV_HOST ? [process.env.VITE_DEV_HOST] : []),
         ...(resolveAllowedHostFromProxyUri() ? [resolveAllowedHostFromProxyUri() as string] : []),
       ]),
     ),
+    ...(devOrigin
+      ? {
+        hmr: {
+          host: devOrigin.hostname,
+          protocol: devOrigin.protocol === 'https:' ? 'wss' : 'ws',
+          clientPort: devOrigin.port
+            ? Number(devOrigin.port)
+            : (devOrigin.protocol === 'https:' ? 443 : 80),
+        },
+      }
+      : {}),
   },
   test: {
     environment: 'jsdom',
