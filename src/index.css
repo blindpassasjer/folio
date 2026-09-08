@@ -1052,8 +1052,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   touch-action: pan-y;
 }
 
-.page-section-header,
-.songlist-header {
+.page-section-header {
   flex-wrap: wrap;
 }
 
@@ -6521,38 +6520,23 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: var(--bg);
 }
 
+/* Layout only — the card skin (border/radius/padding/shadow) comes from the
+   "Unified page header skin" rule further down. */
 .resource-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1.5rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xs);
-  background: var(--surface);
   width: 100%;
 }
 
-/* Non-band song list headers (for setlists/solo views) use the same elevated card language as newer page headers. */
-.page-section-header.resource-header:not(.bands-header),
-.songlist-header.resource-header:not(.bands-header) {
-  border-color: color-mix(in srgb, var(--accent) 34%, var(--border));
-  border-radius: var(--radius-lg);
-  padding: .95rem 1rem;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-
-.page-section-header.resource-header:not(.bands-header) .resource-title,
-.songlist-header.resource-header:not(.bands-header) .resource-title {
+.page-section-header.resource-header .resource-title {
   font-size: var(--page-title-size);
   line-height: 1.2;
 }
 
-.page-section-header.resource-header:not(.bands-header) .setlist-song-count,
-.page-section-header.resource-header:not(.bands-header) .song-list-summary,
-.songlist-header.resource-header:not(.bands-header) .setlist-song-count,
-.songlist-header.resource-header:not(.bands-header) .song-list-summary {
+.page-section-header.resource-header .setlist-song-count,
+.page-section-header.resource-header .song-list-summary {
   font-size: var(--page-copy-size);
 }
 
@@ -8062,8 +8046,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .song-view-header { flex-direction: column; }
   .song-view-toolbar { align-items: flex-start; }
-  .page-section-header,
-  .songlist-header { align-items: stretch; }
+  .page-section-header { align-items: stretch; }
   .resource-header-actions {
     width: 100%;
   }
@@ -9130,13 +9113,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-}
-
-.bands-header:not(.bands-header--detail) {
-  border: 1px solid var(--bands-border);
-  border-radius: var(--radius-lg);
-  padding: .95rem 1rem;
-  background: var(--surface);
 }
 
 .bands-header:not(.bands-header--detail) h1,
