@@ -1178,9 +1178,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   pointer-events: none;
 }
 
-.song-list-sticky > .setlist-header,
 .song-list-sticky > .resource-header,
-.list-sticky-header > .setlist-header,
 .list-sticky-header > .resource-header {
   margin: 0 1.5rem;
   width: auto;
@@ -1960,7 +1958,6 @@ input, select, textarea { font: inherit; color: var(--text); }
     top: 0;
   }
 
-  .song-list-sticky > .setlist-header,
   .song-list-sticky > .press-kit-toolbar,
   .song-list-controls {
     margin-left: calc(1.1rem + var(--safe-left));
@@ -6524,7 +6521,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: var(--bg);
 }
 
-.setlist-header,
 .resource-header {
   display: flex;
   align-items: flex-start;
@@ -6566,7 +6562,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: 0;
 }
 
-.setlist-header-actions,
 .resource-header-actions {
   display: flex;
   align-items: center;
@@ -7881,9 +7876,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     top: calc(var(--topbar-height) + var(--safe-top));
   }
 
-  .song-list-sticky > .setlist-header,
   .song-list-sticky > .resource-header,
-  .list-sticky-header > .setlist-header,
   .list-sticky-header > .resource-header {
     margin: 0 calc(1rem + var(--safe-right)) 0 calc(1rem + var(--safe-left));
   }
@@ -7901,13 +7894,11 @@ input, select, textarea { font: inherit; color: var(--text); }
     flex: 1 1 220px;
   }
 
-  .setlist-header,
   .resource-header {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .setlist-header-actions,
   .resource-header-actions {
     justify-content: flex-start;
   }
@@ -8073,7 +8064,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   .song-view-toolbar { align-items: flex-start; }
   .page-section-header,
   .songlist-header { align-items: stretch; }
-  .setlist-header-actions,
   .resource-header-actions {
     width: 100%;
   }
@@ -10237,9 +10227,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     margin-bottom: .65rem;
   }
 
-  .song-list-sticky > .setlist-header,
   .song-list-sticky > .resource-header,
-  .list-sticky-header > .setlist-header,
   .list-sticky-header > .resource-header {
     padding: .95rem .9rem;
     border-radius: var(--radius-lg);
@@ -10263,9 +10251,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     font-size: .82rem;
   }
 
-  .song-list-sticky .setlist-header-actions,
   .song-list-sticky .resource-header-actions,
-  .list-sticky-header .setlist-header-actions,
   .list-sticky-header .resource-header-actions {
     gap: .45rem;
   }
