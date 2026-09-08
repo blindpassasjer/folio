@@ -64,6 +64,12 @@
   --shadow-md:  0 4px 16px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.06);
   --shadow-lg:  0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.08);
   --shadow-xl:  0 18px 44px rgba(0,0,0,.18), 0 4px 14px rgba(0,0,0,.12);
+  /* Weight roles: headings 700, emphasis / buttons / active-nav 600,
+     labels & eyebrows 500, body 400. */
+  --fw-heading: 700;
+  --fw-emphasis: 600;
+  --fw-label: 500;
+  --fw-body: 400;
   /* Type scale (modular, ~1.18 ratio). Static font-sizes route through these;
      fluid page/section titles keep their clamp(). */
   --text-2xs:  0.75rem;    /* 12 */
@@ -447,7 +453,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   padding: 0 .55rem;
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   color: color-mix(in srgb, var(--text) 86%, var(--surface));
   white-space: nowrap;
   pointer-events: none;
@@ -2069,7 +2075,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .4rem;
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--song-item-muted);
 }
@@ -2164,7 +2170,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-size: var(--text-2xs);
   letter-spacing: .01em;
   color: var(--song-toolbar-elevated-text);
-  font-weight: 700;
+  font-weight: var(--fw-label);
 }
 
 .song-toolbar-tool-card--media,
@@ -2955,7 +2961,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .08em;
-  font-weight: 700;
+  font-weight: var(--fw-label);
 }
 
 .visual-tuner-status {
@@ -2978,7 +2984,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .visual-tuner-side {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   text-transform: uppercase;
   letter-spacing: .06em;
   color: var(--muted);
@@ -4722,7 +4728,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 160px;
 }
 .form-field--full { flex-basis: 100%; }
-.form-field label { font-size: var(--text-sm); font-weight: 600; color: var(--muted); }
+.form-field label { font-size: var(--text-sm); font-weight: var(--fw-label); color: var(--muted); }
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -4906,7 +4912,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .toolbar-label {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
   margin-right: .1rem;
@@ -6150,7 +6156,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .sidebar-section-title {
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: var(--fw-label);
   text-transform: none;
   letter-spacing: normal;
   color: var(--muted);
@@ -6228,7 +6234,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   padding: .1rem .35rem;
   border-radius: var(--radius-pill);
@@ -6342,7 +6348,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .sidebar-storage-popup-title {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
   margin-bottom: .15rem;
@@ -6876,7 +6882,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .setlist-song-note-label {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--song-item-muted);
 }
@@ -6985,7 +6991,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-picker-section-title {
   margin: .45rem 0 .2rem;
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
 }
@@ -8591,7 +8597,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .share-menu-subtitle {
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   color: var(--muted);
   letter-spacing: .01em;
   margin-bottom: .5rem;
@@ -9389,7 +9395,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-logo-section-title {
   margin: 0 0 .5rem;
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: var(--fw-label);
   color: var(--text);
 }
 
@@ -10581,7 +10587,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .stageplot-palette-category-name {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   color: var(--muted);
   letter-spacing: .01em;
   padding: 0 .15rem;
@@ -11005,7 +11011,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .stageplot-legend-input--label {
   flex: 1 1 auto;
   width: auto;
-  font-weight: 600;
+  font-weight: var(--fw-label);
 }
 
 .stageplot-legend-remove {
@@ -11150,7 +11156,7 @@ input.stageplot-legend-number:focus {
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: var(--text-xs);
-  font-weight: 600;
+  font-weight: var(--fw-label);
   color: var(--text);
 }
 
@@ -11493,7 +11499,7 @@ input.stageplot-legend-number:focus {
 
 .chord-caret-popover-row-label {
   font-size: var(--text-2xs);
-  font-weight: 700;
+  font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
 }
