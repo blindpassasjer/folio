@@ -8,6 +8,20 @@ pre-1.0: minor bumps for features, patch bumps for fixes.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-09-08
+
+More design-system work. No changes to features or data.
+
+### Changed
+- Text sizes, spacing (gaps, padding, margins), and font weights now run
+  through consistent scales instead of ~45 ad-hoc font sizes and ~35
+  spacing values. Most elements shift by a pixel or two; the smallest
+  labels come up to a 12px floor.
+- Small field/section labels are lighter (medium weight) so they read as
+  captions rather than competing with their content.
+- Destructive actions (delete, remove) now use one consistent red across
+  the app.
+
 ## [0.1.1] - 2026-09-08
 
 Design system and cleanup pass. No changes to features or data.
