@@ -615,7 +615,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .topbar-coffee-popover-header p {
-  margin: .15rem 0 0;
+  margin: var(--space-3xs) 0 0;
   color: var(--muted);
   font-size: var(--text-xs);
 }
@@ -820,7 +820,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .main-content > :first-child {
-  margin-top: .45rem;
+  margin-top: var(--space-sm);
 }
 
 .main-content > :is(.song-list-page, .setlist-view):first-child {
@@ -920,7 +920,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .app-status {
-  margin-top: 4rem;
+  margin-top: var(--space-4xl);
   padding: var(--space-xl) var(--space-xl);
   text-align: center;
   color: var(--muted);
@@ -937,7 +937,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .footer-links {
   display: inline-flex;
   gap: var(--space-md);
-  margin-left: .6rem;
+  margin-left: var(--space-md);
 }
 
 .footer-links a {
@@ -952,7 +952,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: var(--space-2xs);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-xl);
   color: var(--muted);
   font-size: var(--text-sm);
 }
@@ -1146,7 +1146,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-list-summary {
-  margin-top: .25rem;
+  margin-top: var(--space-2xs);
   color: var(--muted);
   font-size: var(--text-sm);
 }
@@ -1206,7 +1206,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-list-sticky > .resource-header,
 .list-sticky-header > .resource-header {
-  margin: 0 1.5rem;
+  margin: 0 var(--space-2xl);
   width: auto;
 }
 
@@ -1217,7 +1217,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-list-sticky > .press-kit-toolbar,
 .list-sticky-header > .press-kit-toolbar {
-  margin: 0 1.5rem;
+  margin: 0 var(--space-2xl);
 }
 
 :where(.song-list-sticky, .list-sticky-header) + :where(.tech-rider-panels, .press-kit-body-columns) {
@@ -1395,7 +1395,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 150px;
 }
 
-.song-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-top: .25rem; }
+.song-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-2xs); }
 .song-list > li {
   position: relative;
 }
@@ -1500,7 +1500,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--space-xl);
-  margin-top: .25rem;
+  margin-top: var(--space-2xs);
 }
 
 .song-preview-card {
@@ -1776,7 +1776,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: var(--space-lg);
   padding: var(--space-4xl);
   color: var(--muted);
-  margin-top: .25rem;
+  margin-top: var(--space-2xs);
 }
 
 .empty-state-hint {
@@ -1802,7 +1802,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  margin-bottom: .5rem;
+  margin-bottom: var(--space-sm);
 }
 
 .profile-welcome-card--highlight {
@@ -1822,7 +1822,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius);
   background: color-mix(in srgb, var(--accent) 18%, transparent);
   color: var(--accent);
-  margin-bottom: .1rem;
+  margin-bottom: var(--space-3xs);
 }
 
 .profile-welcome-card h2 {
@@ -1850,7 +1850,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .profile-welcome-card-form {
   display: flex;
   gap: var(--space-md);
-  margin-top: .4rem;
+  margin-top: var(--space-xs);
 }
 
 .profile-welcome-card-form input {
@@ -2040,12 +2040,12 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-wrap: wrap;
 }
 
-.song-view-artist { color: var(--song-item-muted); margin-top: .2rem; }
+.song-view-artist { color: var(--song-item-muted); margin-top: var(--space-2xs); }
 .song-view-badges {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
 }
 
 .song-view-toolbar {
@@ -2068,7 +2068,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-toolbar-section + .song-toolbar-section,
 .song-toolbar-section + .song-toolbar-row--actions {
-  margin-top: .35rem;
+  margin-top: var(--space-xs);
   padding-top: var(--space-lg);
   border-top: 1px solid color-mix(in srgb, var(--song-item-border) 60%, transparent);
 }
@@ -2732,7 +2732,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-color: transparent;
 }
 .concert-tool-row .transpose-btn--pin {
-  margin-left: .15rem;
+  margin-left: var(--space-3xs);
   padding-left: var(--space-sm);
   border-left: 1px solid color-mix(in srgb, var(--song-header-accent) 28%, var(--song-item-border));
   border-radius: 0;
@@ -2791,7 +2791,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: .65rem;
+  margin-bottom: var(--space-md);
 }
 .technical-rider-section h2 {
   font-size: var(--text-base);
@@ -2842,7 +2842,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: 0;
 }
 .technical-rider-public-section {
-  margin-top: .85rem;
+  margin-top: var(--space-lg);
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -3252,7 +3252,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .song-view-toolbar {
-    margin-top: .35rem;
+    margin-top: var(--space-xs);
   }
 }
 
@@ -3362,13 +3362,13 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
 }
 
 .voicing-editor {
   display: flex;
   gap: var(--space-xs);
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
 }
 
 .voicing-editor-string {
@@ -3511,7 +3511,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .chord-line { display: flex; flex-wrap: nowrap; white-space: pre; }
 .chord-line--empty { height: .9rem; }
-.chord-line--has-chords { margin-top: .4rem; }
+.chord-line--has-chords { margin-top: var(--space-xs); }
 .chord-line--chord-only { gap: 1.5ch; }
 
 .chord-segment { display: inline-flex; flex-direction: column; white-space: pre; }
@@ -3595,10 +3595,10 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-title-directive {
   font-size: var(--text-lg);
   font-weight: 700;
-  margin-bottom: .3rem;
+  margin-bottom: var(--space-2xs);
   font-family: inherit;
 }
-.song-subtitle-directive { color: var(--muted); margin-bottom: .5rem; font-family: inherit; }
+.song-subtitle-directive { color: var(--muted); margin-bottom: var(--space-sm); font-family: inherit; }
 
 .section-label {
   display: inline-block;
@@ -3610,7 +3610,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   letter-spacing: .06em;
   border-radius: var(--radius-xs);
   padding: var(--space-3xs) var(--space-sm);
-  margin: .75rem 0 .3rem;
+  margin: var(--space-lg) 0 var(--space-2xs);
   font-family: inherit;
 }
 
@@ -3901,7 +3901,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   width: 1.4rem;
   height: 1.4rem;
-  margin-left: .2rem;
+  margin-left: var(--space-2xs);
   padding: 0;
   border: none;
   border-radius: 50%;
@@ -3919,12 +3919,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 /* ─── Section containers ─────────────────────────────────────────────────────── */
 .chord-section {
-  margin: .5rem 0 1rem;
+  margin: var(--space-sm) 0 var(--space-xl);
 }
 
 /* ─── Tab Block ──────────────────────────────────────────────────────────────── */
 .tab-block {
-  margin: .75rem 0;
+  margin: var(--space-lg) 0;
   display: block;
   width: fit-content;
   max-width: 100%;
@@ -4004,7 +4004,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .tab-edit-btn:hover { background: var(--bg); color: var(--text); }
 
 .tab-editor-guides {
-  margin-top: .6rem;
+  margin-top: var(--space-md);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -4025,7 +4025,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-xl);
 }
 .recordings-header h2 {
   display: flex;
@@ -4158,9 +4158,9 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px dashed var(--border);
   border-radius: var(--radius);
   padding: var(--space-xl);
-  margin-bottom: .75rem;
+  margin-bottom: var(--space-lg);
 }
-.recorder-title { font-size: var(--text-sm); font-weight: 700; margin-bottom: .75rem; }
+.recorder-title { font-size: var(--text-sm); font-weight: 700; margin-bottom: var(--space-lg); }
 
 /* SongRecorder root */
 .song-recorder {
@@ -4242,14 +4242,14 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
   font-size: var(--text-xs);
   color: var(--muted);
 }
 .recording-comments-toggle--open { color: var(--accent); }
 
 .recording-comments {
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -4293,7 +4293,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .recording-comment-delete { margin-left: auto; color: var(--muted); }
 
 .recording-comment-body {
-  margin: .2rem 0 0;
+  margin: var(--space-2xs) 0 0;
   font-size: var(--text-sm);
   white-space: pre-wrap;
   word-break: break-word;
@@ -4713,7 +4713,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 /* ─── Add Song Form ──────────────────────────────────────────────────────────── */
-.add-song-page h1 { margin-bottom: 1.25rem; }
+.add-song-page h1 { margin-bottom: var(--space-xl); }
 
 .add-song-form {
   display: flex;
@@ -4840,7 +4840,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: .3rem;
+  margin-bottom: var(--space-2xs);
 }
 .chordpro-label-actions {
   display: flex;
@@ -4926,10 +4926,10 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
-  margin-right: .1rem;
+  margin-right: var(--space-3xs);
 }
 
-.toolbar-divider { width: 1px; height: 20px; background: var(--border); margin: 0 .25rem; }
+.toolbar-divider { width: 1px; height: 20px; background: var(--border); margin: 0 var(--space-2xs); }
 
 .toolbar-btn {
   display: inline-flex;
@@ -5376,7 +5376,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 1px;
   align-self: stretch;
   background: var(--border);
-  margin: 0 .15rem;
+  margin: 0 var(--space-3xs);
 }
 
 .tab-seq-metronome-panel {
@@ -5385,7 +5385,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: var(--chord-bg);
 }
 
-.form-hint { font-size: var(--text-xs); color: var(--muted); margin-top: .3rem; }
+.form-hint { font-size: var(--text-xs); color: var(--muted); margin-top: var(--space-2xs); }
 .form-hint code {
   background: var(--chord-bg);
   color: var(--accent);
@@ -5488,7 +5488,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-feature-list {
-  margin: .35rem 0 0;
+  margin: var(--space-xs) 0 0;
   padding: 0;
   list-style: none;
   display: grid;
@@ -5505,7 +5505,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .login-feature-icon {
   color: var(--accent, #6366f1);
-  margin-bottom: .3rem;
+  margin-bottom: var(--space-2xs);
   display: block;
 }
 
@@ -5517,14 +5517,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-feature-item p {
-  margin: .25rem 0 0;
+  margin: var(--space-2xs) 0 0;
   color: var(--muted);
   font-size: var(--text-xs);
   line-height: 1.4;
 }
 
 .login-hero-source {
-  margin-top: .35rem;
+  margin-top: var(--space-xs);
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
@@ -5605,7 +5605,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: var(--space-sm) var(--space-lg);
 }
 
-.login-submit { width: 100%; justify-content: center; margin-top: .25rem; }
+.login-submit { width: 100%; justify-content: center; margin-top: var(--space-2xs); }
 
 /* ─── Demo Banner ──────────────────────────────────────────────────────────── */
 .demo-banner {
@@ -5888,7 +5888,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-list-item--pinned {
-  margin-bottom: .25rem;
+  margin-bottom: var(--space-2xs);
 }
 
 .sidebar-nested-group {
@@ -6115,7 +6115,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 /* ─── Setlists section in sidebar ──────────────────────────────────────────── */
 .sidebar-setlists-section {
-  margin-top: .4rem;
+  margin-top: var(--space-xs);
   padding-top: 0;
   border-top: none;
 }
@@ -6129,8 +6129,8 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-lg);
-  margin-top: .2rem;
-  margin-bottom: .3rem;
+  margin-top: var(--space-2xs);
+  margin-bottom: var(--space-2xs);
 }
 
 .sidebar-section-toggle {
@@ -6241,7 +6241,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-setlist-drop-label {
-  margin-left: .3rem;
+  margin-left: var(--space-2xs);
   display: inline-flex;
   align-items: center;
   font-size: var(--text-2xs);
@@ -6303,7 +6303,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--space-lg);
-  margin-bottom: .5rem;
+  margin-bottom: var(--space-sm);
   position: relative;
 }
 
@@ -6362,7 +6362,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-weight: var(--fw-label);
   letter-spacing: .01em;
   color: var(--muted);
-  margin-bottom: .15rem;
+  margin-bottom: var(--space-3xs);
 }
 
 .sidebar-storage-popup-row {
@@ -6373,7 +6373,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-storage-popup-row--total {
-  margin-top: .1rem;
+  margin-top: var(--space-3xs);
 }
 
 .sidebar-storage-popup-label {
@@ -6422,7 +6422,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .sidebar-storage-popup-divider {
   height: 1px;
   background: var(--border);
-  margin: .1rem 0;
+  margin: var(--space-3xs) 0;
 }
 
 .sidebar-mode-switcher {
@@ -6431,7 +6431,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: var(--space-xs);
   padding: 0 var(--space-lg);
-  margin-bottom: .5rem;
+  margin-bottom: var(--space-sm);
   min-width: 0;
 }
 
@@ -6537,7 +6537,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  margin: 0 .25rem;
+  margin: 0 var(--space-2xs);
 }
 
 .sidebar-band-item.active {
@@ -6666,7 +6666,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-drop-slot-end {
-  margin-bottom: .75rem;
+  margin-bottom: var(--space-lg);
 }
 
 .setlist-song-item {
@@ -6881,7 +6881,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-song-note-editor {
-  margin: .4rem 0 0 5.1rem;
+  margin: var(--space-xs) 0 0 var(--space-4xl);
   padding: var(--space-sm);
   border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
   border-radius: var(--radius);
@@ -7000,7 +7000,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-picker-section-title {
-  margin: .45rem 0 .2rem;
+  margin: var(--space-sm) 0 var(--space-2xs);
   font-size: var(--text-base);
   font-weight: var(--fw-label);
   letter-spacing: .01em;
@@ -7058,7 +7058,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-picker-empty {
-  margin: 1rem 0;
+  margin: var(--space-xl) 0;
   text-align: center;
   color: var(--muted);
 }
@@ -7092,7 +7092,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: var(--space-sm);
   flex-wrap: wrap;
-  margin-top: .65rem;
+  margin-top: var(--space-md);
 }
 
 .concert-topbar {
@@ -7165,7 +7165,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: space-between;
   align-items: center;
   gap: var(--space-sm);
-  margin-bottom: .55rem;
+  margin-bottom: var(--space-sm);
   font-size: var(--text-2xs);
   font-weight: 600;
   letter-spacing: .02em;
@@ -7204,7 +7204,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-chords-stack .concert-notation-toggle {
-  margin-left: .45rem;
+  margin-left: var(--space-sm);
 }
 
 .concert-chip-btn {
@@ -7245,7 +7245,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-session-error {
-  margin: .3rem 0 0;
+  margin: var(--space-2xs) 0 0;
   font-size: var(--text-xs);
   color: #c0392b;
   text-align: center;
@@ -7344,7 +7344,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-song-note {
-  margin: .4rem 0 0;
+  margin: var(--space-xs) 0 0;
   padding: var(--space-xs) var(--space-md);
   background: color-mix(in srgb, var(--accent, #6366f1) 10%, transparent);
   border-left: 3px solid var(--accent, #6366f1);
@@ -8058,7 +8058,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .concert-topbar-toggle-row {
-    margin-top: .45rem;
+    margin-top: var(--space-sm);
   }
 
   .concert-topbar {
@@ -8151,7 +8151,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .song-list-sticky {
-    margin-bottom: .6rem;
+    margin-bottom: var(--space-md);
     gap: var(--space-lg);
   }
 
@@ -8442,9 +8442,9 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: var(--space-3xl);
 }
 
-.setlist-print-header { text-align: center; margin-bottom: 2rem; }
+.setlist-print-header { text-align: center; margin-bottom: var(--space-3xl); }
 .setlist-print-band { text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); color: #555; margin: 0; }
-.setlist-print-header h1 { font-size: var(--text-2xl); margin: .3rem 0; }
+.setlist-print-header h1 { font-size: var(--text-2xl); margin: var(--space-2xs) 0; }
 .setlist-print-count { color: #555; margin: 0; }
 
 .setlist-print-list {
@@ -8463,11 +8463,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 .setlist-print-song-note { display: block; font-size: .72em; color: #666; font-style: italic; }
 
 .setlist-print-charts { display: flex; flex-direction: column; gap: var(--space-4xl); }
-.setlist-print-chart-header { margin-bottom: .75rem; border-bottom: 1px solid #ddd; padding-bottom: var(--space-sm); }
+.setlist-print-chart-header { margin-bottom: var(--space-lg); border-bottom: 1px solid #ddd; padding-bottom: var(--space-sm); }
 .setlist-print-chart-header h2 { font-size: var(--text-xl); margin: 0; }
 .setlist-print-chart-number { color: #888; }
-.setlist-print-chart-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); color: #555; font-size: var(--text-sm); margin: .3rem 0 0; }
-.setlist-print-chart-note { font-style: italic; color: #555; margin: .3rem 0 0; }
+.setlist-print-chart-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); color: #555; font-size: var(--text-sm); margin: var(--space-2xs) 0 0; }
+.setlist-print-chart-note { font-style: italic; color: #555; margin: var(--space-2xs) 0 0; }
 .setlist-print-chart .chord-display { font-size: var(--text-base); }
 
 @page { margin: 1.5cm; }
@@ -8611,7 +8611,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-weight: var(--fw-label);
   color: var(--muted);
   letter-spacing: .01em;
-  margin-bottom: .5rem;
+  margin-bottom: var(--space-sm);
 }
 
 .share-menu-band-list {
@@ -8893,7 +8893,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-account-delete-check input {
-  margin-top: .15rem;
+  margin-top: var(--space-3xs);
 }
 
 .bands-create-card,
@@ -8947,7 +8947,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-settings-logout {
-  margin-top: .2rem;
+  margin-top: var(--space-2xs);
 }
 
 .profile-settings-link {
@@ -9211,7 +9211,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-page-toolbar {
   display: flex;
   align-items: center;
-  margin-bottom: .6rem;
+  margin-bottom: var(--space-md);
 }
 
 .bands-settings-layout {
@@ -9228,7 +9228,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-section-heading {
-  margin: 0 0 .95rem;
+  margin: 0 0 var(--space-xl);
   font-size: var(--section-title-size);
   font-weight: 600;
   border-bottom: 1px solid var(--bands-border);
@@ -9236,7 +9236,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-section-heading--spaced {
-  margin-top: .45rem;
+  margin-top: var(--space-sm);
 }
 
 .bands-field-counter {
@@ -9262,7 +9262,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: var(--space-sm);
   flex-wrap: wrap;
-  margin-top: .55rem;
+  margin-top: var(--space-sm);
 }
 
 .bands-color-custom-field {
@@ -9285,7 +9285,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: grid;
   grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
   gap: var(--space-xl);
-  margin-top: .95rem;
+  margin-top: var(--space-xl);
 }
 
 .bands-logo-section {
@@ -9389,7 +9389,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: center;
   gap: var(--space-md);
-  margin-top: .65rem;
+  margin-top: var(--space-md);
   flex-wrap: wrap;
 }
 
@@ -9404,7 +9404,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-logo-section-title {
-  margin: 0 0 .5rem;
+  margin: 0 0 var(--space-sm);
   font-size: var(--text-sm);
   font-weight: var(--fw-label);
   color: var(--text);
@@ -9784,7 +9784,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-direction: column;
   gap: var(--space-lg);
   padding: 0;
-  margin: .8rem 0 0;
+  margin: var(--space-lg) 0 0;
 }
 
 .trash-list-item {
@@ -9809,7 +9809,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .trash-item-meta {
-  margin: .2rem 0 0;
+  margin: var(--space-2xs) 0 0;
   color: var(--muted);
   font-size: var(--text-sm);
 }
@@ -9836,7 +9836,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 /* ── Public band setlist page ────────────────────────────────────── */
 
 .public-page-nav {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-3xl);
 }
 
 .public-page-nav-brand {
@@ -9867,11 +9867,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-header {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-3xl);
 }
 
 .public-setlist-header .public-page-nav-brand {
-  margin-bottom: .65rem;
+  margin-bottom: var(--space-md);
 }
 
 .public-share-branding-row {
@@ -9880,16 +9880,16 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   gap: var(--space-xl);
   flex-wrap: wrap;
-  margin-bottom: .8rem;
+  margin-bottom: var(--space-lg);
 }
 
 .public-share-branding-row--header {
-  margin-bottom: 1.05rem;
+  margin-bottom: var(--space-xl);
 }
 
 .public-share-branding-row--footer {
   justify-content: center;
-  margin-bottom: .45rem;
+  margin-bottom: var(--space-sm);
 }
 
 .public-share-branding-row--footer .public-setlist-band-logo--large {
@@ -9919,7 +9919,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-setlist-band {
   font-size: var(--text-sm);
   color: var(--muted, #888);
-  margin: 0 0 .35rem;
+  margin: 0 0 var(--space-xs);
   text-transform: uppercase;
   letter-spacing: .04em;
 }
@@ -9928,7 +9928,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  margin-bottom: .35rem;
+  margin-bottom: var(--space-xs);
 }
 
 .public-setlist-band-row .public-setlist-band {
@@ -9967,7 +9967,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-setlist-title {
   font-size: clamp(1.45rem, 1.15rem + 1.1vw, 1.9rem);
   font-weight: 700;
-  margin: 0 0 .4rem;
+  margin: 0 0 var(--space-xs);
   line-height: 1.2;
 }
 
@@ -10034,7 +10034,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-footer {
-  margin-top: 3rem;
+  margin-top: var(--space-4xl);
   padding-top: var(--space-2xl);
   border-top: 1px solid var(--border, #e5e5e5);
   text-align: center;
@@ -10051,7 +10051,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-signoff {
-  margin: .5rem 0 0;
+  margin: var(--space-sm) 0 0;
   font-size: var(--text-xs);
   color: var(--muted, #888);
 }
@@ -10088,12 +10088,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-presskit-logo-wrap {
   display: flex;
   justify-content: center;
-  margin-bottom: .4rem;
+  margin-bottom: var(--space-xs);
 }
 
 .public-presskit-band-name,
 .public-share-band-name {
-  margin: 0 0 .15rem;
+  margin: 0 0 var(--space-3xs);
   font-size: clamp(1.8rem, 1.4rem + 1.3vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -10186,7 +10186,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     --song-list-sticky-top-cover: 1rem;
     gap: var(--space-md);
     padding-bottom: var(--space-md);
-    margin-bottom: .65rem;
+    margin-bottom: var(--space-md);
   }
 
   .song-list-sticky > .resource-header,
@@ -10241,7 +10241,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-presskit-download-wrap {
-  margin-top: .65rem;
+  margin-top: var(--space-md);
 }
 
 .public-presskit-body {
@@ -10251,7 +10251,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-presskit-section-heading {
-  margin: 0 0 .9rem;
+  margin: 0 0 var(--space-xl);
   font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: .01em;
@@ -10344,7 +10344,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-  margin-top: .5rem;
+  margin-top: var(--space-sm);
   padding: 0 var(--space-2xs);
 }
 
@@ -10445,7 +10445,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .public-presskit-presave-list {
   list-style: none;
-  margin: .75rem 0 0;
+  margin: var(--space-lg) 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -10516,7 +10516,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
-  scroll-margin-top: 8rem;
+  scroll-margin-top: var(--space-4xl);
 }
 
 .tech-rider-panel {
@@ -10894,11 +10894,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .stageplot-legend-group {
-  margin-top: .85rem;
+  margin-top: var(--space-lg);
 }
 
 .stageplot-reference-group {
-  margin-top: .85rem;
+  margin-top: var(--space-lg);
 }
 
 .stageplot-reference-list {
@@ -10926,7 +10926,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-weight: 800;
   letter-spacing: .01em;
   color: var(--muted);
-  margin: 0 0 .4rem;
+  margin: 0 0 var(--space-xs);
 }
 
 .stageplot-legend {
@@ -11215,7 +11215,7 @@ input.stageplot-legend-number:focus {
 
 .footer-version {
   display: block;
-  margin-top: 0.35rem;
+  margin-top: var(--space-xs);
   font-size: var(--text-2xs);
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--muted) 65%, transparent);
@@ -11234,7 +11234,7 @@ input.stageplot-legend-number:focus {
   background: var(--surface-raised, var(--surface));
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-lg);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;
@@ -11299,7 +11299,7 @@ input.stageplot-legend-number:focus {
   --sticky-header-content-gap: var(--space-xs);
   display: grid;
   gap: var(--space-xl);
-  margin-top: 1rem;
+  margin-top: var(--space-xl);
 }
 
 @media (min-width: 768px) {
@@ -11334,7 +11334,7 @@ input.stageplot-legend-number:focus {
 
 .press-kit-section-header {
   padding-bottom: var(--space-sm);
-  margin-bottom: 0.6rem;
+  margin-bottom: var(--space-md);
   border-bottom: 1px solid var(--border);
 }
 
@@ -11346,7 +11346,7 @@ input.stageplot-legend-number:focus {
 }
 
 .press-kit-section-hint {
-  margin: 0.2rem 0 0;
+  margin: var(--space-2xs) 0 0;
   font-size: var(--text-xs);
   color: var(--muted);
 }
