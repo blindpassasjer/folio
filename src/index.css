@@ -64,10 +64,21 @@
   --shadow-md:  0 4px 16px rgba(0,0,0,.10), 0 1px 4px rgba(0,0,0,.06);
   --shadow-lg:  0 8px 32px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.08);
   --shadow-xl:  0 18px 44px rgba(0,0,0,.18), 0 4px 14px rgba(0,0,0,.12);
+  /* Type scale (modular, ~1.18 ratio). Static font-sizes route through these;
+     fluid page/section titles keep their clamp(). */
+  --text-2xs:  0.75rem;    /* 12 */
+  --text-xs:   0.8125rem;  /* 13 */
+  --text-sm:   0.875rem;   /* 14 */
+  --text-base: 1rem;       /* 16 */
+  --text-md:   1.125rem;   /* 18 */
+  --text-lg:   1.375rem;   /* 22 */
+  --text-xl:   1.5rem;     /* 24 */
+  --text-2xl:  1.875rem;   /* 30 */
+  --text-3xl:  2.25rem;    /* 36 */
   --page-title-size: clamp(1.5rem, 1.2rem + 1.1vw, 1.95rem);
   --section-title-size: clamp(1rem, .92rem + .35vw, 1.15rem);
-  --page-copy-size: .92rem;
-  --meta-copy-size: .84rem;
+  --page-copy-size: var(--text-base);
+  --meta-copy-size: var(--text-xs);
   --font-mono:  'JetBrains Mono', 'Courier New', Courier, monospace;
   font-size: 16px;
 }
@@ -223,7 +234,7 @@ textarea {
 
   /* Prevent iOS Safari auto-zoom on input focus (triggers when font-size < 16px) */
   input, select, textarea {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 }
 
@@ -241,7 +252,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: 0.75rem;
   background: var(--accent);
   color: #fff;
-  font-size: 0.8rem;
+  font-size: var(--text-xs);
   padding: 0 1rem;
   text-align: center;
   flex-wrap: wrap;
@@ -321,7 +332,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .5rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   color: var(--accent);
   text-decoration: none;
 }
@@ -388,14 +399,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .topbar-storage-text strong {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   letter-spacing: .01em;
   color: var(--muted);
 }
 
 .topbar-storage-text span {
   display: block;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--text);
   white-space: nowrap;
   overflow: hidden;
@@ -435,7 +446,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   justify-content: center;
   padding: 0 .55rem;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: color-mix(in srgb, var(--text) 86%, var(--surface));
   white-space: nowrap;
@@ -449,7 +460,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .topbar-storage-percent {
   min-width: 2.2rem;
   text-align: right;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--muted);
 }
@@ -463,7 +474,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .3rem .7rem;
   border-radius: var(--radius-sm);
   color: var(--muted);
-  font-size: .9rem;
+  font-size: var(--text-sm);
   transition: background .15s, color .15s;
   border: none;
   background: transparent;
@@ -487,7 +498,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   line-height: 1;
   color: white;
@@ -543,12 +554,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 .topbar-invites-popover-header h2,
 .topbar-coffee-popover-header h2 {
   margin: 0;
-  font-size: .95rem;
+  font-size: var(--text-base);
 }
 
 .topbar-invites-popover-header span {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: var(--text-xs);
 }
 
 .topbar-invites-popover-content,
@@ -589,13 +600,13 @@ input, select, textarea { font: inherit; color: var(--text); }
 .topbar-coffee-popover-header p {
   margin: .15rem 0 0;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: var(--text-xs);
 }
 
 .topbar-coffee-popover-content p {
   margin: 0;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: var(--text-sm);
 }
 
 .topbar-coffee-options {
@@ -609,7 +620,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .4rem;
   min-height: 3rem;
   padding: .75rem .9rem;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
@@ -643,7 +654,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .topbar-invites-group h3 {
   margin: 0;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   letter-spacing: .01em;
   color: var(--muted);
 }
@@ -653,7 +664,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   padding: 0;
   cursor: pointer;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -693,11 +704,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .topbar-invite-main strong {
-  font-size: .86rem;
+  font-size: var(--text-sm);
 }
 
 .topbar-invite-main span {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   line-height: 1.3;
 }
@@ -711,13 +722,13 @@ input, select, textarea { font: inherit; color: var(--text); }
 .topbar-invite-actions .btn {
   min-height: 2rem;
   padding: .35rem .7rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
 }
 
 .topbar-invites-empty {
   margin: 0;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   padding: .3rem .1rem;
 }
 
@@ -757,19 +768,19 @@ input, select, textarea { font: inherit; color: var(--text); }
 .user-avatar--sm {
   width: 1.45rem;
   height: 1.45rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
 }
 
 .user-avatar--md {
   width: 2rem;
   height: 2rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .user-avatar--lg {
   width: 3rem;
   height: 3rem;
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
 }
 
 .topbar-profile-link .user-avatar {
@@ -777,7 +788,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   width: auto;
   height: auto;
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
 }
 
 .main-content {
@@ -901,7 +912,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .footer {
   text-align: center;
   padding: 1rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   border-top: 1px solid var(--border);
 }
@@ -926,7 +937,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .3rem;
   margin-bottom: 1rem;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: var(--text-sm);
 }
 .back-link:hover { color: var(--accent); text-decoration: none; }
 
@@ -938,11 +949,11 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   padding: .15rem .6rem;
 }
-.lang-badge--sm { font-size: .72rem; padding: .1rem .45rem; }
+.lang-badge--sm { font-size: var(--text-2xs); padding: .1rem .45rem; }
 
 .tag {
   display: inline-block;
@@ -950,7 +961,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--muted);
   border-radius: var(--radius-pill);
   padding: .1rem .5rem;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
 }
 
 .song-meta-badge {
@@ -960,7 +971,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   padding: .1rem .45rem;
 }
@@ -1060,7 +1071,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .45rem;
-  font-size: 1.8rem;
+  font-size: var(--text-2xl);
   line-height: 1.2;
   cursor: default;
   padding: 0;
@@ -1068,7 +1079,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-list-heading.setlist-title,
 .resource-title.resource-title--setlist {
-  font-size: 1.45rem;
+  font-size: var(--text-xl);
 }
 
 .song-list-heading:hover,
@@ -1078,7 +1089,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-list-heading-icon,
 .resource-title-icon {
-  font-size: 1.2rem;
+  font-size: var(--text-md);
   line-height: 1;
 }
 
@@ -1106,7 +1117,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-name-input {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
   border: 1px solid var(--border);
@@ -1120,7 +1131,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-list-summary {
   margin-top: .25rem;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: var(--text-sm);
 }
 
 .view-toggle {
@@ -1244,7 +1255,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface);
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .emoji-choice-btn.active {
@@ -1301,7 +1312,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .icon-picker-reset-btn {
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   background: none;
   border: none;
@@ -1433,13 +1444,13 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-card-main { display: flex; flex-direction: column; gap: .1rem; }
 .song-card-title {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--song-item-text);
 }
 .song-card-link:hover .song-card-title {
   color: color-mix(in srgb, var(--song-item-accent) 88%, var(--song-item-text));
 }
-.song-card-artist { font-size: .85rem; color: var(--song-item-muted); }
+.song-card-artist { font-size: var(--text-sm); color: var(--song-item-muted); }
 .song-card-meta { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
 
 .song-card .lang-badge,
@@ -1463,7 +1474,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .setlist-song-meta .tag {
   display: inline-flex;
   align-items: center;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   padding: .1rem .45rem;
 }
@@ -1548,7 +1559,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-preview-text {
   color: var(--song-item-muted);
-  font-size: .92rem;
+  font-size: var(--text-base);
   line-height: 1.55;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -1595,7 +1606,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   height: auto;
   gap: .35rem;
   padding: .45rem .85rem;
-  font-size: .875rem;
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
@@ -1752,7 +1763,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .empty-state-hint {
-  font-size: .875rem;
+  font-size: var(--text-sm);
   text-align: center;
   max-width: 320px;
 }
@@ -1803,11 +1814,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-welcome-card--highlight h2 {
-  font-size: 1.2rem;
+  font-size: var(--text-md);
 }
 
 .profile-welcome-card p {
-  font-size: .9rem;
+  font-size: var(--text-sm);
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
@@ -1816,7 +1827,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .profile-welcome-card-cta {
   color: var(--text) !important;
   font-weight: 600;
-  font-size: .95rem !important;
+  font-size: var(--text-base) !important;
 }
 
 .profile-welcome-card-form {
@@ -1833,7 +1844,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1.5px solid color-mix(in srgb, var(--accent) 35%, var(--border));
   background: var(--bg);
   color: var(--text);
-  font-size: .95rem;
+  font-size: var(--text-base);
 }
 
 .profile-welcome-card-form input:focus {
@@ -1848,7 +1859,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   background: var(--accent);
   color: var(--accent-contrast);
-  font-size: .95rem;
+  font-size: var(--text-base);
   font-weight: 700;
   white-space: nowrap;
   cursor: pointer;
@@ -1999,7 +2010,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-view-title {
-  font-size: 1.6rem;
+  font-size: var(--text-xl);
   font-weight: 700;
   line-height: 1.2;
   color: var(--song-item-text);
@@ -2057,14 +2068,14 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .4rem;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--song-item-muted);
 }
 
 .song-toolbar-section-subtitle {
-  font-size: .73rem;
+  font-size: var(--text-2xs);
   color: var(--song-toolbar-elevated-text);
 }
 
@@ -2150,7 +2161,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   letter-spacing: .01em;
   color: var(--song-toolbar-elevated-text);
   font-weight: 700;
@@ -2234,14 +2245,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 .transpose-btn:hover { background: var(--chord-bg); }
 .transpose-btn--reset { color: var(--muted); opacity: .7; }
 .transpose-btn--reset:hover { color: var(--danger); background: #fde8e8; opacity: 1; }
-.transpose-label { font-size: .82rem; color: var(--muted); min-width: 72px; text-align: center; }
+.transpose-label { font-size: var(--text-xs); color: var(--muted); min-width: 72px; text-align: center; }
 .transpose-scope-tag { color: var(--accent); font-weight: 600; }
 
 .toggle-label {
   display: flex;
   align-items: center;
   gap: .4rem;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
   cursor: pointer;
   user-select: none;
@@ -2257,7 +2268,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--accent);
   border-radius: var(--radius-pill);
   padding: .15rem .6rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
 }
 
@@ -2280,7 +2291,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .2rem;
   width: 1.85rem;
   height: 1.85rem;
-  font-size: .73rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--muted);
   background: var(--surface);
@@ -2300,7 +2311,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
   padding: .2rem .5rem;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--muted);
   background: var(--surface);
@@ -2396,7 +2407,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .visual-metronome-tempo-display {
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--accent);
   letter-spacing: .02em;
@@ -2413,7 +2424,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .visual-metronome-tempo-input {
   width: 3rem;
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--accent);
   letter-spacing: .02em;
@@ -2510,7 +2521,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-pill);
   min-height: 2.5rem;
   padding: .4rem .85rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--muted);
   background: var(--surface);
@@ -2540,7 +2551,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: .74rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   padding: .2rem .45rem;
   border: 1px solid var(--border);
@@ -2766,7 +2777,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin-bottom: .65rem;
 }
 .technical-rider-section h2 {
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 .technical-rider-table-wrap {
   overflow-x: auto;
@@ -2833,7 +2844,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .25rem;
   width: fit-content;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
 }
 
@@ -2918,7 +2929,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: .25rem .5rem;
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--muted);
   background: var(--surface);
@@ -2940,7 +2951,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .visual-tuner-label {
-  font-size: .62rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: .08em;
@@ -2948,7 +2959,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .visual-tuner-status {
-  font-size: 1.85rem;
+  font-size: var(--text-2xl);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--text);
@@ -2966,7 +2977,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .visual-tuner-side {
-  font-size: .62rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -2974,7 +2985,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .visual-tuner-cue {
-  font-size: .66rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--muted);
   text-align: center;
@@ -3043,19 +3054,19 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .visual-tuner-cents {
   font-weight: 600;
-  font-size: .66rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
 }
 
 .visual-tuner-hz {
   text-align: center;
-  font-size: .63rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
 }
 
 .visual-tuner-error {
   text-align: center;
-  font-size: .63rem;
+  font-size: var(--text-2xs);
   color: var(--danger);
   font-weight: 600;
 }
@@ -3208,7 +3219,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .instrument-toggle-btn {
   padding: .22rem .65rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--muted);
   transition: background .15s, color .15s;
@@ -3251,7 +3262,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .chord-diagram-name {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--chord);
   font-family: var(--font-mono);
 }
@@ -3267,7 +3278,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .chord-diagram-close:hover { background: var(--bg); color: var(--text); }
 
 .chord-diagram-unavailable {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   padding: .25rem 0;
 }
@@ -3282,7 +3293,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .4rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   user-select: none;
 }
@@ -3306,7 +3317,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-sm);
   background: var(--bg);
   color: var(--muted);
-  font-size: .74rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   line-height: 1.2;
   transition: background .12s, color .12s, border-color .12s;
@@ -3326,7 +3337,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .chord-diagram-hint {
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
 }
 
@@ -3351,7 +3362,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .voicing-editor-label {
-  font-size: .7rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
 }
 
@@ -3366,7 +3377,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .voicing-editor-value {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   min-width: 1.2rem;
   text-align: center;
@@ -3374,7 +3385,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 /* ─── Song edit history ────────────────────────────────────────────────────── */
 .song-history-empty {
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
   padding: .5rem 0;
 }
@@ -3415,12 +3426,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-history-item-changed {
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
 .song-history-item-time {
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   white-space: nowrap;
 }
@@ -3434,7 +3445,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-history-fields {
   border-collapse: collapse;
-  font-size: .82rem;
+  font-size: var(--text-xs);
 }
 
 .song-history-fields th {
@@ -3457,7 +3468,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  font-size: .78rem;
+  font-size: var(--text-xs);
   line-height: 1.5;
   max-height: 320px;
   overflow: auto;
@@ -3476,7 +3487,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius);
   padding: 1.25rem 1.5rem;
   font-family: var(--font-mono);
-  font-size: .95rem;
+  font-size: var(--text-base);
   line-height: 1.4;
   overflow-x: auto;
 }
@@ -3491,7 +3502,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .chord-name {
   color: var(--chord);
   font-weight: 700;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   line-height: 1.2;
   min-width: 1ch;
 }
@@ -3499,7 +3510,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .chord-name-btn {
   color: var(--chord);
   font-weight: 700;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-family: inherit;
   line-height: 1.2;
   padding: 0;
@@ -3565,7 +3576,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-title-directive {
-  font-size: 1.3rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   margin-bottom: .3rem;
   font-family: inherit;
@@ -3576,7 +3587,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-block;
   background: var(--chord-bg);
   color: var(--accent);
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -3669,7 +3680,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .3rem;
   min-height: 2.35rem;
   padding: .35rem .72rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -3696,7 +3707,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .notes-save-status {
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   border-radius: var(--radius-pill);
   padding: .1rem .55rem;
@@ -3727,7 +3738,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius);
   background: color-mix(in srgb, var(--bubble-color, var(--accent)) 10%, var(--surface));
   color: var(--bubble-color, var(--accent));
-  font-size: .84rem;
+  font-size: var(--text-xs);
   line-height: 1.5;
   pointer-events: none;
 }
@@ -3773,7 +3784,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   background: transparent;
   color: var(--bubble-color, var(--accent));
-  font-size: .84rem;
+  font-size: var(--text-xs);
   font-family: inherit;
   line-height: 1.5;
   resize: both;
@@ -3819,7 +3830,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .3rem;
   min-height: 2.2rem;
   padding: .32rem .65rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
@@ -3904,7 +3915,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .tab-content {
   font-family: var(--font-mono);
-  font-size: .82rem;
+  font-size: var(--text-xs);
   line-height: 1.55;
   background: var(--bg);
   border: 1px solid var(--border);
@@ -3932,7 +3943,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   gap: .35rem;
   padding: .28rem .7rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   background: var(--chord-bg);
   color: var(--accent);
@@ -4003,7 +4014,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   gap: .4rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 .recordings-list {
   list-style: none;
@@ -4011,7 +4022,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-direction: column;
   gap: .5rem;
 }
-.no-recordings { color: var(--muted); font-size: .9rem; }
+.no-recordings { color: var(--muted); font-size: var(--text-sm); }
 
 /* Audio Player */
 .audio-player {
@@ -4077,7 +4088,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 .play-btn:hover { background: var(--accent-h); }
 .player-info { display: flex; flex-direction: column; min-width: 100px; flex: 1; }
-.player-name { font-size: .85rem; font-weight: 600; }
+.player-name { font-size: var(--text-sm); font-weight: 600; }
 .player-name-input {
   width: 100%;
   min-width: 0;
@@ -4085,11 +4096,11 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--text);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   padding: .2rem .45rem;
 }
-.player-date { font-size: .75rem; color: var(--muted); }
+.player-date { font-size: var(--text-2xs); color: var(--muted); }
 .waveform-progress {
   flex: 1;
   min-width: 0;
@@ -4132,7 +4143,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: 1rem;
   margin-bottom: .75rem;
 }
-.recorder-title { font-size: .9rem; font-weight: 700; margin-bottom: .75rem; }
+.recorder-title { font-size: var(--text-sm); font-weight: 700; margin-bottom: .75rem; }
 
 /* SongRecorder root */
 .song-recorder {
@@ -4142,11 +4153,11 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 100%;
 }
 .recorder-controls { display: flex; flex-direction: column; gap: .75rem; }
-.recorder-status { color: var(--muted); font-size: .9rem; }
+.recorder-status { color: var(--muted); font-size: var(--text-sm); }
 .recorder-indicator {
   color: var(--danger);
   font-weight: 700;
-  font-size: .9rem;
+  font-size: var(--text-sm);
   animation: blink 1s step-end infinite;
 }
 @keyframes blink { 50% { opacity: .4; } }
@@ -4161,7 +4172,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .recorder-name-input:focus { border-color: var(--accent); }
 .recorder-save-form { display: flex; flex-direction: column; gap: .5rem; }
 .recorder-save-actions { display: flex; gap: .5rem; }
-.recorder-error { color: var(--danger); font-size: .85rem; }
+.recorder-error { color: var(--danger); font-size: var(--text-sm); }
 
 /* Recorder — new sub-layouts */
 .recorder-recording-row {
@@ -4172,7 +4183,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 .recorder-elapsed {
   font-variant-numeric: tabular-nums;
-  font-size: .95rem;
+  font-size: var(--text-base);
   font-weight: 600;
   color: var(--text);
   min-width: 2.5rem;
@@ -4215,7 +4226,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .35rem;
   margin-top: .5rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 .recording-comments-toggle--open { color: var(--accent); }
@@ -4228,7 +4239,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .recording-comments-empty {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   margin: 0;
 }
@@ -4253,7 +4264,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: center;
   gap: .45rem;
-  font-size: .82rem;
+  font-size: var(--text-xs);
 }
 
 .recording-comment-timestamp {
@@ -4266,7 +4277,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .recording-comment-body {
   margin: .2rem 0 0;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -4292,7 +4303,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -4323,7 +4334,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 .attachments-hint {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: var(--text-xs);
   margin: 0;
 }
 .attachments-section {
@@ -4402,7 +4413,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-xs);
   padding: .2rem .35rem;
-  font-size: .7rem;
+  font-size: var(--text-2xs);
   color: var(--text);
   cursor: pointer;
   line-height: 1;
@@ -4434,7 +4445,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .chord-finder-match {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   border: 1px solid var(--border);
   border-radius: var(--radius-xs);
@@ -4442,7 +4453,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .chord-finder-match--primary {
-  font-size: 1.05rem;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--accent);
   border-color: var(--accent);
@@ -4451,7 +4462,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .chord-finder-no-match,
 .chord-finder-hint {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -4461,7 +4472,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-xs);
   padding: .15rem .5rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   cursor: pointer;
 }
@@ -4480,7 +4491,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   height: 26px;
   border-radius: 50%;
   flex-shrink: 0;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   line-height: 1;
   cursor: default;
 }
@@ -4490,7 +4501,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .rec-avatar--initials {
   background: var(--accent);
   color: #fff;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
 }
 
@@ -4501,7 +4512,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .35rem;
   padding: .45rem .85rem;
   border-radius: var(--radius-sm);
-  font-size: .875rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   transition: background .15s, color .15s;
   border: 1px solid transparent;
@@ -4533,7 +4544,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius);
   background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 80%, #003d99));
   color: var(--accent-contrast);
-  font-size: .88rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1;
   letter-spacing: .01em;
@@ -4575,7 +4586,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius);
   background: var(--surface);
   color: var(--text);
-  font-size: .88rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   line-height: 1;
   letter-spacing: .01em;
@@ -4672,7 +4683,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .btn--sm {
   min-height: 1.9rem;
   padding: .35rem .7rem;
-  font-size: .82rem;
+  font-size: var(--text-xs);
 }
 
 .btn--block {
@@ -4711,7 +4722,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 160px;
 }
 .form-field--full { flex-basis: 100%; }
-.form-field label { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.form-field label { font-size: var(--text-sm); font-weight: 600; color: var(--muted); }
 .form-field input,
 .form-field select,
 .form-field textarea {
@@ -4732,7 +4743,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .form-field textarea {
   resize: vertical;
   font-family: var(--font-mono);
-  font-size: .88rem;
+  font-size: var(--text-sm);
   min-height: 280px;
 }
 
@@ -4753,7 +4764,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   cursor: pointer;
   color: var(--text);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   text-align: left;
   gap: .5rem;
@@ -4772,7 +4783,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .form-metadata-summary {
   font-weight: 400;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4801,7 +4812,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--border) 36%, transparent);
   color: var(--muted);
-  font-size: .86rem;
+  font-size: var(--text-sm);
   padding: .5rem .65rem;
   display: flex;
   flex-direction: column;
@@ -4821,7 +4832,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: flex-end;
 }
 .preview-toggle {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--accent);
   font-weight: 600;
   padding: .2rem .5rem;
@@ -4835,7 +4846,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .form-submit-inline {
   min-height: auto;
   padding: .3rem .65rem;
-  font-size: .82rem;
+  font-size: var(--text-xs);
 }
 
 .chordpro-preview {
@@ -4894,7 +4905,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .toolbar-label {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--muted);
@@ -4909,7 +4920,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .3rem;
   padding: .25rem .6rem;
   border-radius: var(--radius-sm);
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   border: 1px solid transparent;
   transition: background .15s, color .15s, border-color .15s;
@@ -4970,7 +4981,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .toolbar-chord-bracket {
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: .88rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   line-height: 1;
 }
@@ -5028,7 +5039,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .chord-finder-modal-title {
-  font-size: .95rem;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
 }
@@ -5095,7 +5106,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .tab-seq-title {
-  font-size: .95rem;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
 }
@@ -5133,7 +5144,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex: 1;
   min-width: 28px;
   text-align: center;
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--muted);
   user-select: none;
@@ -5152,7 +5163,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 20px;
   flex-shrink: 0;
   text-align: center;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   font-family: var(--font-mono);
   color: var(--muted);
@@ -5171,7 +5182,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   background: var(--bg);
   color: var(--muted);
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-family: var(--font-mono);
   font-weight: 700;
   cursor: pointer;
@@ -5224,7 +5235,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .25rem;
   padding: .2rem .55rem;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   background: transparent;
   color: var(--muted);
@@ -5237,7 +5248,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .tab-seq-bar-ctrl-btn:disabled { opacity: .35; cursor: default; }
 
 .tab-seq-bar-count {
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   min-width: 3.5rem;
   text-align: center;
@@ -5245,7 +5256,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .tab-seq-hint {
   padding: 0 1rem .5rem;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   flex-shrink: 0;
 }
@@ -5272,7 +5283,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .35rem .85rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  font-size: .82rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   cursor: pointer;
   transition: background .15s, border-color .15s, color .15s;
@@ -5357,7 +5368,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: var(--chord-bg);
 }
 
-.form-hint { font-size: .8rem; color: var(--muted); margin-top: .3rem; }
+.form-hint { font-size: var(--text-xs); color: var(--muted); margin-top: .3rem; }
 .form-hint code {
   background: var(--chord-bg);
   color: var(--accent);
@@ -5373,7 +5384,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-sm);
   padding: .75rem 1rem;
   color: var(--danger);
-  font-size: .9rem;
+  font-size: var(--text-sm);
   display: flex;
   flex-direction: column;
   gap: .25rem;
@@ -5442,7 +5453,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .login-brand.login-brand--hero {
   justify-content: flex-start;
   gap: .65rem;
-  font-size: 1.1rem;
+  font-size: var(--text-md);
 }
 
 .login-hero-title {
@@ -5456,7 +5467,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: 0;
   color: var(--muted);
   max-width: 54ch;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .login-feature-list {
@@ -5483,7 +5494,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .login-feature-item h2 {
   margin: 0;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   color: var(--text);
 }
@@ -5491,7 +5502,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .login-feature-item p {
   margin: .25rem 0 0;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: var(--text-xs);
   line-height: 1.4;
 }
 
@@ -5502,7 +5513,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .4rem;
   color: var(--muted);
-  font-size: .82rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   text-decoration: none;
 }
@@ -5529,13 +5540,13 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   gap: .5rem;
   color: var(--accent);
-  font-size: 1.3rem;
+  font-size: var(--text-lg);
   font-weight: 700;
 }
 
 .login-title {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   opacity: 0;
   text-shadow: 0 0 18px color-mix(in srgb, var(--accent) 48%, #ffffff);
@@ -5547,7 +5558,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: 0;
   text-align: center;
   color: var(--muted);
-  font-size: .95rem;
+  font-size: var(--text-base);
   line-height: 1.45;
 }
 
@@ -5558,7 +5569,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--accent) 8%, var(--surface));
   color: var(--muted);
-  font-size: .82rem;
+  font-size: var(--text-xs);
   line-height: 1.4;
 }
 
@@ -5569,7 +5580,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-error {
-  font-size: .875rem;
+  font-size: var(--text-sm);
   color: var(--danger);
   background: color-mix(in srgb, var(--danger) 12%, var(--surface));
   border: 1px solid var(--danger);
@@ -5658,7 +5669,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .image-lightbox-caption {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   color: var(--text);
   text-align: center;
 }
@@ -5707,11 +5718,11 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .login-title {
-    font-size: 1.12rem;
+    font-size: var(--text-md);
   }
 
   .login-description {
-    font-size: .88rem;
+    font-size: var(--text-sm);
   }
 
 }
@@ -5754,7 +5765,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   overflow-y: auto;
   padding-bottom: 1rem;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .sidebar-header {
@@ -5791,7 +5802,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .4rem .5rem;
   border-radius: var(--radius-sm);
   border: 1px solid transparent;
-  font-size: .9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--muted);
   background: var(--bg);
@@ -5810,7 +5821,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-title {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
@@ -5993,7 +6004,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .3rem .4rem;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--muted);
   text-align: left;
   min-width: 0;
@@ -6030,7 +6041,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-list-count {
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   background: var(--bg);
   border-radius: var(--radius-pill);
@@ -6066,7 +6077,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--accent);
   border-radius: var(--radius-sm);
   background: var(--bg);
-  font-size: 1rem;
+  font-size: var(--text-base);
   outline: none;
 }
 
@@ -6077,7 +6088,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .35rem;
   width: 100%;
   padding: .45rem .75rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--muted);
   text-align: left;
   margin-top: auto;
@@ -6113,7 +6124,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 0;
   padding: .3rem .4rem;
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: var(--text-base);
   text-align: left;
   color: var(--muted);
   transition: background .15s, color .15s;
@@ -6138,7 +6149,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-section-title {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   text-transform: none;
   letter-spacing: normal;
@@ -6192,7 +6203,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex: 1;
   padding: .3rem .4rem;
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--muted);
   text-align: left;
   min-width: 0;
@@ -6216,7 +6227,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin-left: .3rem;
   display: inline-flex;
   align-items: center;
-  font-size: .67rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   padding: .1rem .35rem;
@@ -6226,7 +6237,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-setlist-count {
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   margin-left: auto;
   padding: 0 .4rem;
@@ -6252,7 +6263,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .35rem;
   width: 100%;
   padding: .45rem .75rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--muted);
   text-align: left;
   transition: color .15s;
@@ -6330,7 +6341,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-storage-popup-title {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--muted);
@@ -6349,7 +6360,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-storage-popup-label {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--text);
 }
 
@@ -6358,7 +6369,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-storage-popup-value {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   white-space: nowrap;
 }
@@ -6420,7 +6431,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 100%;
   padding: .3rem .4rem;
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   text-transform: none;
   letter-spacing: normal;
@@ -6475,7 +6486,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 100%;
   padding: .4rem .5rem;
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--fg);
   text-align: left;
   transition: background .1s;
@@ -6523,7 +6534,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex: 1;
   min-width: 0;
   padding: .45rem .5rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: inherit;
   text-align: left;
   border-radius: var(--radius-sm);
@@ -6572,7 +6583,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-song-count {
-  font-size: .88rem;
+  font-size: var(--text-sm);
   color: var(--muted);
   margin: 0;
 }
@@ -6596,7 +6607,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .75rem 1.5rem;
   background: var(--chord-bg);
   border-bottom: 1px solid var(--border);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
@@ -6750,7 +6761,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   justify-content: center;
   background: var(--song-item-chip-bg);
   border-radius: 50%;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--song-item-chip-text);
 }
@@ -6781,7 +6792,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-song-artist {
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--song-item-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -6789,7 +6800,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-song-note-preview {
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: color-mix(in srgb, var(--song-item-accent) 58%, var(--song-item-text));
   white-space: nowrap;
   overflow: hidden;
@@ -6799,7 +6810,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .setlist-song-meta {
   display: flex;
   gap: .5rem;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   flex-wrap: wrap;
 }
 
@@ -6864,7 +6875,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-song-note-label {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--song-item-muted);
@@ -6920,7 +6931,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-picker-header h2 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: var(--text-base);
   color: var(--text);
 }
 
@@ -6973,7 +6984,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-picker-section-title {
   margin: .45rem 0 .2rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: .01em;
   color: var(--muted);
@@ -7016,7 +7027,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-picker-song-artist {
-  font-size: .84rem;
+  font-size: var(--text-xs);
   color: var(--song-item-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -7025,7 +7036,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-picker-add-btn {
   flex-shrink: 0;
-  font-size: .82rem;
+  font-size: var(--text-xs);
   padding: .45rem .8rem;
 }
 
@@ -7038,7 +7049,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-picker-source-note {
   margin: 0;
   padding: .5rem 1rem .25rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   font-style: italic;
 }
@@ -7089,12 +7100,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-topbar-main h1 {
-  font-size: 1.2rem;
+  font-size: var(--text-md);
   line-height: 1.2;
 }
 
 .concert-topbar-main p {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   display: flex;
   gap: .65rem;
@@ -7138,7 +7149,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .5rem;
   margin-bottom: .55rem;
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   letter-spacing: .02em;
   color: var(--muted);
@@ -7186,7 +7197,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
   padding: .35rem .75rem;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   background: var(--surface);
 }
@@ -7206,7 +7217,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .concert-session-toggle button {
   padding: .35rem .7rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   background: var(--surface);
 }
@@ -7218,7 +7229,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .concert-session-error {
   margin: .3rem 0 0;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: #c0392b;
   text-align: center;
 }
@@ -7258,7 +7269,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-teleprompter-speed {
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   padding: 0 .35rem;
   min-width: 3.7rem;
@@ -7305,7 +7316,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .concert-song-artist {
   margin: -.2rem 0 0;
   color: var(--muted);
-  font-size: .95rem;
+  font-size: var(--text-base);
 }
 
 .concert-song-meta {
@@ -7321,7 +7332,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: color-mix(in srgb, var(--accent, #6366f1) 10%, transparent);
   border-left: 3px solid var(--accent, #6366f1);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: .9rem;
+  font-size: var(--text-sm);
   color: var(--text);
   white-space: pre-wrap;
 }
@@ -7330,7 +7341,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: none;
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   padding: 1.5rem;
-  font-size: 1.06rem;
+  font-size: var(--text-md);
   line-height: 1.55;
   flex: 1;
   overflow-x: hidden;
@@ -7441,7 +7452,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-song-navigator-header h3 {
-  font-size: .88rem;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
@@ -7513,7 +7524,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-radius: var(--radius-pill);
   background: var(--chord-bg);
   color: var(--accent);
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
 }
 
@@ -7524,14 +7535,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .concert-song-jump-main strong {
-  font-size: .86rem;
+  font-size: var(--text-sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .concert-song-jump-main small {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -7644,13 +7655,13 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .concert-pedal-mapper-head h3 {
   margin: 0;
-  font-size: .92rem;
+  font-size: var(--text-base);
 }
 
 .concert-pedal-mapper-head p {
   margin: 0;
   color: var(--muted);
-  font-size: .78rem;
+  font-size: var(--text-xs);
 }
 
 .concert-pedal-mapper-actions {
@@ -7671,7 +7682,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--text);
   border-radius: var(--radius-pill);
   padding: .36rem .62rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
 }
 
@@ -7695,7 +7706,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-wrap: wrap;
   gap: .45rem .8rem;
   color: var(--muted);
-  font-size: .74rem;
+  font-size: var(--text-2xs);
 }
 
 .concert-nav-btn:disabled {
@@ -7706,7 +7717,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 /* ─── Song list heading when a list is active ──────────────────────────────── */
 .song-list-heading,
 .resource-title {
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   font-weight: 700;
   color: var(--accent);
   padding-bottom: .5rem;
@@ -7741,7 +7752,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .5rem;
   padding: .55rem .85rem;
-  font-size: .88rem;
+  font-size: var(--text-sm);
   color: var(--text);
   text-align: left;
   transition: background .12s;
@@ -7751,7 +7762,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .list-dropdown-empty {
   padding: .75rem .85rem;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
@@ -7784,7 +7795,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .topbar-storage-text span {
-    font-size: .72rem;
+    font-size: var(--text-2xs);
   }
 
   .topbar-nav > a,
@@ -7957,7 +7968,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 
   .sidebar-storage .topbar-storage-meter-label {
-    font-size: .68rem;
+    font-size: var(--text-2xs);
     padding: 0 .35rem;
   }
 
@@ -8099,7 +8110,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .concert-song-surface .chord-display {
     padding: 1rem .85rem;
-    font-size: .95rem;
+    font-size: var(--text-base);
   }
 
   .concert-nav-footer {
@@ -8148,7 +8159,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
   .search-input,
   .lang-select {
-    font-size: .92rem;
+    font-size: var(--text-base);
     line-height: 1.2;
     padding-top: .42rem;
     padding-bottom: .42rem;
@@ -8207,8 +8218,8 @@ input, select, textarea { font: inherit; color: var(--text); }
     height: 3.5rem;
     right: calc(1rem + var(--safe-right));
   }
-  .chord-display { padding: .75rem; font-size: .88rem; }
-  .song-view-title { font-size: 1.3rem; }
+  .chord-display { padding: .75rem; font-size: var(--text-sm); }
+  .song-view-title { font-size: var(--text-lg); }
 }
 
 @media (max-width: 640px) {
@@ -8349,7 +8360,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   body { background: white; color: black; }
 
   .song-view { gap: .75rem; }
-  .song-view-title { font-size: 1.4rem; }
+  .song-view-title { font-size: var(--text-lg); }
   .song-view-artist { color: #555; }
 
   .chord-display { padding: 0; }
@@ -8393,7 +8404,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .setlist-print-layout-toggle button {
   padding: .4rem .8rem;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   background: var(--surface);
   color: var(--muted);
 }
@@ -8415,8 +8426,8 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .setlist-print-header { text-align: center; margin-bottom: 2rem; }
-.setlist-print-band { text-transform: uppercase; letter-spacing: .08em; font-size: .9rem; color: #555; margin: 0; }
-.setlist-print-header h1 { font-size: 2rem; margin: .3rem 0; }
+.setlist-print-band { text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); color: #555; margin: 0; }
+.setlist-print-header h1 { font-size: var(--text-2xl); margin: .3rem 0; }
 .setlist-print-count { color: #555; margin: 0; }
 
 .setlist-print-list {
@@ -8436,11 +8447,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .setlist-print-charts { display: flex; flex-direction: column; gap: 3rem; }
 .setlist-print-chart-header { margin-bottom: .75rem; border-bottom: 1px solid #ddd; padding-bottom: .5rem; }
-.setlist-print-chart-header h2 { font-size: 1.5rem; margin: 0; }
+.setlist-print-chart-header h2 { font-size: var(--text-xl); margin: 0; }
 .setlist-print-chart-number { color: #888; }
-.setlist-print-chart-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; color: #555; font-size: .9rem; margin: .3rem 0 0; }
+.setlist-print-chart-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; color: #555; font-size: var(--text-sm); margin: .3rem 0 0; }
 .setlist-print-chart-note { font-style: italic; color: #555; margin: .3rem 0 0; }
-.setlist-print-chart .chord-display { font-size: 1.05rem; }
+.setlist-print-chart .chord-display { font-size: var(--text-base); }
 
 @page { margin: 1.5cm; }
 
@@ -8477,7 +8488,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .share-menu-field span {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -8532,7 +8543,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .share-menu-search-status {
   margin: 0;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -8564,7 +8575,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .share-menu-recipient-btn span {
   color: var(--muted);
-  font-size: .76rem;
+  font-size: var(--text-2xs);
 }
 
 .share-menu-actions {
@@ -8579,7 +8590,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .share-menu-subtitle {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   color: var(--muted);
   letter-spacing: .01em;
@@ -8607,7 +8618,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .share-menu-band-copy span {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: var(--text-xs);
 }
 
 /* ─── Profile invites page ─────────────────────────────────────────────────── */
@@ -8764,14 +8775,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .profile-stat-card strong,
 .profile-limit-card strong {
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .profile-stat-card small,
 .profile-limit-card span,
 .profile-stat-label {
   color: var(--muted);
-  font-size: .78rem;
+  font-size: var(--text-xs);
 }
 
 
@@ -8806,7 +8817,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .profile-band-subscription-copy span {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: var(--text-xs);
 }
 
 .profile-avatar-section {
@@ -8861,7 +8872,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   align-items: flex-start;
   gap: .55rem;
-  font-size: .9rem;
+  font-size: var(--text-sm);
 }
 
 .profile-account-delete-check input {
@@ -8913,7 +8924,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-shrink: 0;
   align-self: flex-end;
   padding: .36rem .62rem;
-  font-size: .76rem;
+  font-size: var(--text-2xs);
   line-height: 1.2;
   white-space: nowrap;
 }
@@ -8924,7 +8935,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .profile-settings-link {
   color: var(--muted);
-  font-size: .88rem;
+  font-size: var(--text-sm);
 }
 
 .profile-invites-page {
@@ -8943,7 +8954,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .admin-tabs a {
   padding: .4rem .8rem;
   border-radius: var(--radius);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
   border: 1px solid var(--border);
   background: var(--surface);
@@ -9064,7 +9075,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: color-mix(in srgb, #1f9d55 16%, var(--surface));
   border: 1px solid color-mix(in srgb, #1f9d55 30%, var(--border));
   color: #17693a;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 700;
 }
 
@@ -9172,7 +9183,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-member-name {
-  font-size: .9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text);
   white-space: nowrap;
@@ -9249,7 +9260,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .bands-inline-note {
   margin: 0;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -9343,7 +9354,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-logo-card-title {
   flex: 1;
   min-width: 0;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -9353,7 +9364,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-logo-use-btn {
   padding: .2rem .45rem;
   min-height: unset;
-  font-size: .72rem;
+  font-size: var(--text-2xs);
 }
 
 .media-pagination {
@@ -9377,7 +9388,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .bands-logo-section-title {
   margin: 0 0 .5rem;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text);
 }
@@ -9390,7 +9401,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .bands-logo-info-item {
   margin: 0;
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   line-height: 1.4;
 }
@@ -9402,7 +9413,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid color-mix(in srgb, #d32f2f 30%, var(--border));
   background: color-mix(in srgb, #d32f2f 8%, var(--surface));
   color: #d32f2f;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   cursor: pointer;
   transition: background .15s, border-color .15s;
@@ -9437,12 +9448,12 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-subscription-copy span {
-  font-size: .84rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
 .bands-member-email {
-  font-size: .75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -9503,11 +9514,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-member-copy span,
 .bands-library-copy span {
   color: var(--muted);
-  font-size: .85rem;
+  font-size: var(--text-sm);
 }
 
 .bands-member-role-select {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--bands-hue);
   background: transparent;
   border: 1px solid color-mix(in srgb, var(--bands-hue) 28%, var(--border));
@@ -9545,7 +9556,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   background: color-mix(in srgb, var(--bands-hue-soft) 72%, var(--surface));
   border: 1px solid color-mix(in srgb, var(--bands-hue) 22%, var(--border));
   color: var(--bands-hue);
-  font-size: .78rem;
+  font-size: var(--text-xs);
   text-transform: capitalize;
 }
 
@@ -9629,7 +9640,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   .setlist-tab {
     min-height: 40px;
     padding: .55rem .65rem;
-    font-size: .92rem;
+    font-size: var(--text-base);
   }
 }
 
@@ -9783,7 +9794,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .trash-item-meta {
   margin: .2rem 0 0;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: var(--text-sm);
 }
 
 .trash-item-actions {
@@ -9889,7 +9900,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-band {
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted, #888);
   margin: 0 0 .35rem;
   text-transform: uppercase;
@@ -9975,7 +9986,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-song-position {
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--muted, #888);
   min-width: 1.4rem;
   text-align: right;
@@ -10013,7 +10024,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-footer-link {
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted, #888);
   text-decoration: none;
 }
@@ -10024,7 +10035,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .public-setlist-signoff {
   margin: .5rem 0 0;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   color: var(--muted, #888);
 }
 
@@ -10118,7 +10129,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   .profile-section-heading h3,
   .profile-invites-section h2,
   .bands-section-heading {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 
   .profile-invites-header p,
@@ -10127,7 +10138,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   .bands-status,
   .setlist-subtitle,
   .public-setlist-status {
-    font-size: .88rem;
+    font-size: var(--text-sm);
     line-height: 1.45;
   }
 
@@ -10146,11 +10157,11 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .public-setlist-count,
   .public-setlist-song-artist {
-    font-size: .8rem;
+    font-size: var(--text-xs);
   }
 
   .public-setlist-song-title {
-    font-size: .9rem;
+    font-size: var(--text-sm);
   }
 
   .song-list-sticky,
@@ -10182,7 +10193,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .song-list-sticky .setlist-song-count,
   .list-sticky-header .setlist-song-count {
-    font-size: .82rem;
+    font-size: var(--text-xs);
   }
 
   .song-list-sticky .resource-header-actions,
@@ -10192,7 +10203,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
   .song-list-sticky .btn,
   .list-sticky-header .btn {
-    font-size: .8rem;
+    font-size: var(--text-xs);
     min-height: 2.35rem;
   }
 
@@ -10224,7 +10235,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .public-presskit-section-heading {
   margin: 0 0 .9rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   letter-spacing: .01em;
   color: var(--muted, #888);
@@ -10255,14 +10266,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .public-presskit-text-standalone-title {
   margin: 0;
-  font-size: 1.35rem;
+  font-size: var(--text-lg);
   font-weight: 700;
   color: var(--text);
 }
 
 .public-presskit-text-title {
   margin: 0;
-  font-size: .95rem;
+  font-size: var(--text-base);
   font-weight: 600;
   color: var(--text);
 }
@@ -10323,7 +10334,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-presskit-image-title {
   margin: 0;
   color: var(--muted);
-  font-size: .84rem;
+  font-size: var(--text-xs);
   flex: 1;
   min-width: 0;
   overflow: hidden;
@@ -10340,7 +10351,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid color-mix(in srgb, var(--bands-hue) 40%, var(--border));
   background: var(--surface);
   color: var(--bands-hue, var(--accent));
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
@@ -10451,7 +10462,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .public-presskit-presave-platform {
   flex-shrink: 0;
   font-weight: 600;
-  font-size: .8rem;
+  font-size: var(--text-xs);
   color: var(--accent);
 }
 
@@ -10460,7 +10471,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--muted);
 }
 
@@ -10569,7 +10580,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .stageplot-palette-category-name {
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   color: var(--muted);
   letter-spacing: .01em;
@@ -10588,7 +10599,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .35rem;
   padding: .34rem .62rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -10695,7 +10706,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
   background: color-mix(in srgb, var(--surface) 82%, #fff 18%);
   color: var(--muted);
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -10802,7 +10813,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1.5px solid var(--surface);
   background: var(--muted);
   color: #fff;
-  font-size: .64rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
   line-height: 1;
   z-index: 1;
@@ -10889,12 +10900,12 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: .3rem .55rem;
   border-radius: var(--radius-pill);
   border: 1px dashed color-mix(in srgb, var(--border) 85%, transparent);
-  font-size: .78rem;
+  font-size: var(--text-xs);
   font-weight: 600;
 }
 
 .stageplot-legend-heading {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
   letter-spacing: .01em;
   color: var(--muted);
@@ -10933,7 +10944,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .stageplot-legend-meta {
-  font-size: .7rem;
+  font-size: var(--text-2xs);
   font-weight: 500;
   color: var(--muted);
   overflow: hidden;
@@ -10972,7 +10983,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   min-width: 0;
   width: 100%;
   padding: .3rem .45rem;
-  font-size: .78rem;
+  font-size: var(--text-xs);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--bg);
@@ -11023,7 +11034,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: 0;
   border: none;
   background: none;
-  font-size: .7rem;
+  font-size: var(--text-2xs);
   font-weight: 600;
   color: var(--muted);
   cursor: pointer;
@@ -11045,7 +11056,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border: 1.5px solid transparent;
   background: var(--muted);
   color: #fff;
-  font-size: .68rem;
+  font-size: var(--text-2xs);
   font-weight: 800;
   flex-shrink: 0;
 }
@@ -11111,7 +11122,7 @@ input.stageplot-legend-number:focus {
 
 .stageplot-channel-switch-track {
   padding: .12rem .5rem;
-  font-size: .62rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   white-space: nowrap;
@@ -11138,7 +11149,7 @@ input.stageplot-legend-number:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: .82rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--text);
 }
@@ -11179,7 +11190,7 @@ input.stageplot-legend-number:focus {
 /* ── Press Kit ───────────────────────────────────────────────────────────── */
 
 .sidebar-empty-hint {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   color: var(--muted);
   padding: 0.25rem 0.75rem;
   margin: 0;
@@ -11188,7 +11199,7 @@ input.stageplot-legend-number:focus {
 .footer-version {
   display: block;
   margin-top: 0.35rem;
-  font-size: 0.68rem;
+  font-size: var(--text-2xs);
   letter-spacing: 0.02em;
   color: color-mix(in srgb, var(--muted) 65%, transparent);
   text-decoration: none;
@@ -11312,14 +11323,14 @@ input.stageplot-legend-number:focus {
 
 .press-kit-section-title {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
 }
 
 .press-kit-section-hint {
   margin: 0.2rem 0 0;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   color: var(--muted);
 }
 
@@ -11349,7 +11360,7 @@ input.stageplot-legend-number:focus {
   min-height: 160px;
   outline: none;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   line-height: 1.6;
 }
 
@@ -11358,13 +11369,13 @@ input.stageplot-legend-number:focus {
 }
 
 .press-kit-editor .ProseMirror h2 {
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   font-weight: 700;
   margin: 0.8em 0 0.3em;
 }
 
 .press-kit-editor .ProseMirror h3 {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   margin: 0.8em 0 0.3em;
 }
@@ -11419,7 +11430,7 @@ input.stageplot-legend-number:focus {
   background: transparent;
   outline: none;
   font-family: var(--font-mono);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--text);
   padding: .15rem .2rem;
 }
@@ -11464,7 +11475,7 @@ input.stageplot-legend-number:focus {
   border-radius: var(--radius-xs);
   padding: .3rem .5rem;
   font-family: var(--font-mono);
-  font-size: .85rem;
+  font-size: var(--text-sm);
   color: var(--text);
   cursor: pointer;
 }
@@ -11481,7 +11492,7 @@ input.stageplot-legend-number:focus {
 }
 
 .chord-caret-popover-row-label {
-  font-size: .72rem;
+  font-size: var(--text-2xs);
   font-weight: 700;
   letter-spacing: .01em;
   color: var(--muted);
@@ -11495,7 +11506,7 @@ input.stageplot-legend-number:focus {
 
 .chord-caret-popover-chips button {
   font-family: var(--font-mono);
-  font-size: .8rem;
+  font-size: var(--text-xs);
   font-weight: 600;
   color: var(--text);
   background: var(--bg);
@@ -11512,7 +11523,7 @@ input.stageplot-legend-number:focus {
 }
 
 .chord-caret-popover-empty {
-  font-size: .82rem;
+  font-size: var(--text-xs);
   color: var(--muted);
   padding: .2rem .3rem;
 }
