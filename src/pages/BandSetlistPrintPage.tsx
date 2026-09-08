@@ -96,7 +96,7 @@ export default function BandSetlistPrintPage() {
           </div>
           <button
             type="button"
-            className="setlist-action-btn setlist-action-btn--concert"
+            className="btn btn--concert"
             onClick={() => window.print()}
           >
             <Printer size={14} /> Print / Save as PDF

@@ -829,7 +829,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                 <>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--accent"
+                    className="btn btn--accent"
                     onClick={() => { void navigator.clipboard.writeText(activeShare.publicUrl).then(() => toast.success('Link copied.')); }}
                     title="Copy public link"
                   >
@@ -837,7 +837,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                   </button>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => void handleDisable()}
                     disabled={busyDisable}
                     title="Disable public link"
@@ -848,7 +848,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
               ) : (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--accent"
+                  className="btn btn--accent"
                   onClick={() => void handleShare()}
                   disabled={busyShare}
                   title="Create and copy public share link"
@@ -858,7 +858,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
               )}
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--secondary"
+                className="btn btn--secondary"
                 onClick={() => void handleDownload()}
                 disabled={busyDownload}
                 title="Download ZIP"
@@ -868,7 +868,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
               {canEdit && (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => pressKitImportInputRef.current?.click()}
                   disabled={isImportingPressKit}
                   title={isImportingPressKit ? 'Importing press kit…' : 'Import press kit from file'}
@@ -880,7 +880,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
               {canEdit && (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => void handleDelete()}
                   title="Delete press kit"
                 >
@@ -972,7 +972,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                     />
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void addPresaveUrl()}
                     >
                       Add
@@ -1205,7 +1205,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                 <div className="media-pagination">
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => setImagePage((current) => Math.max(1, current - 1))}
                     disabled={imagePage <= 1}
                   >
@@ -1214,7 +1214,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                   <p className="bands-inline-note">Page {imagePage} of {imageTotalPages}</p>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => setImagePage((current) => Math.min(imageTotalPages, current + 1))}
                     disabled={imagePage >= imageTotalPages}
                   >
@@ -1250,7 +1250,7 @@ export default function PressKitView({ bandId, bandName, kit, canEdit, userId, u
                     />
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void addVideoUrl()}
                     >
                       Add

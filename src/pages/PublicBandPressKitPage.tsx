@@ -260,7 +260,7 @@ export default function PublicBandPressKitPage() {
         <div className="public-presskit-download-wrap">
           <button
             type="button"
-            className="setlist-action-btn setlist-action-btn--secondary"
+            className="btn btn--secondary"
             onClick={() => void handleDownload()}
             disabled={busyDownload}
             title="Download press kit zip"

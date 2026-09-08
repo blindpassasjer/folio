@@ -119,7 +119,7 @@ export default function BandManagementPanel({
       <div className="bands-invite-form">
         <button
           type="button"
-          className="setlist-action-btn"
+          className="btn btn--primary"
           disabled={!canEditBand || busyInviteLink}
           onClick={() => { void handleCreateInviteLink(); }}
         >
@@ -182,7 +182,7 @@ export default function BandManagementPanel({
                 {canRemove ? (
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     disabled={busyMemberId === memberId}
                     onClick={() => void handleRemoveMember(memberId)}
                   >
@@ -192,7 +192,7 @@ export default function BandManagementPanel({
                 {showLeaveCurrentUser && !isOwner && isCurrentUser ? (
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     disabled={busyMemberId === memberId}
                     onClick={() => { void handleLeaveBand(); }}
                   >

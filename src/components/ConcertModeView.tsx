@@ -390,7 +390,7 @@ export default function ConcertModeView({
     return (
       <div className="not-found">
         <p>No songs to display.</p>
-        <button type="button" className="setlist-action-btn" onClick={handleStopConcert}>Go back</button>
+        <button type="button" className="btn btn--primary" onClick={handleStopConcert}>Go back</button>
       </div>
     );
   }
@@ -400,7 +400,7 @@ export default function ConcertModeView({
     return (
       <div className="not-found">
         <p>Could not load song for concert mode.</p>
-        <button type="button" className="setlist-action-btn" onClick={handleStopConcert}>Go back</button>
+        <button type="button" className="btn btn--primary" onClick={handleStopConcert}>Go back</button>
       </div>
     );
   }

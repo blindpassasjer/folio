@@ -167,7 +167,7 @@ export default function AdminUsersPage() {
                       <div className="admin-user-delete-confirm-actions">
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--danger"
+                          className="btn btn--danger"
                           disabled={busy || deleteConfirmText.trim().toLowerCase() !== user.email.toLowerCase()}
                           onClick={() => void handleDeleteUser(user)}
                         >
@@ -175,7 +175,7 @@ export default function AdminUsersPage() {
                         </button>
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--secondary"
+                          className="btn btn--secondary"
                           disabled={busy}
                           onClick={() => {
                             setConfirmDeleteId(null);
@@ -201,7 +201,7 @@ export default function AdminUsersPage() {
                       </div>
                       <button
                         type="button"
-                        className="setlist-action-btn setlist-action-btn--secondary"
+                        className="btn btn--secondary"
                         disabled={busy}
                         onClick={() => void handleSaveQuota(user)}
                       >
@@ -210,7 +210,7 @@ export default function AdminUsersPage() {
                       {user.hasCustomQuota ? (
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--secondary"
+                          className="btn btn--secondary"
                           disabled={busy}
                           onClick={() => void handleResetQuota(user)}
                         >
@@ -220,7 +220,7 @@ export default function AdminUsersPage() {
                       {!isSelf && (
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--secondary"
+                          className="btn btn--secondary"
                           disabled={busy}
                           onClick={() => void handleToggleRole(user)}
                         >
@@ -230,7 +230,7 @@ export default function AdminUsersPage() {
                       {!isSelf && (
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--danger"
+                          className="btn btn--danger"
                           disabled={busy}
                           onClick={() => {
                             setConfirmDeleteId(user.id);

@@ -280,7 +280,7 @@ export default function InputListEditor({
             <div className="resource-header-actions">
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--accent"
+                className="btn btn--accent"
                 onClick={() => void onCopyPublicLink()}
                 title={rider.publicShareEnabled ? 'Copy public link' : 'Create & copy public link'}
               >
@@ -291,7 +291,7 @@ export default function InputListEditor({
                   {onDelete ? (
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void handleDeleteRider()}
                       title={`Delete rider ${rider.name}`}
                     >

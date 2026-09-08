@@ -32,7 +32,7 @@ export default function BandMembersPage() {
     return (
       <section className="bands-page">
         <p className="bands-status">Band not found.</p>
-        <Link to="/bands" className="setlist-action-btn setlist-action-btn--secondary">Back to bands</Link>
+        <Link to="/bands" className="btn btn--secondary">Back to bands</Link>
       </section>
     );
   }
@@ -65,7 +65,7 @@ export default function BandMembersPage() {
         </div>
       </header>
 
-      <Link to={`/bands/${band.id}/library`} className="setlist-action-btn setlist-action-btn--secondary">
+      <Link to={`/bands/${band.id}/library`} className="btn btn--secondary">
         Back to band library
       </Link>
 
@@ -97,7 +97,7 @@ export default function BandMembersPage() {
                 <div className="bands-delete-confirm-actions">
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--danger"
+                    className="btn btn--danger"
                     disabled={busyDeleteBand || deleteConfirmName !== band.name}
                     onClick={() => void handleDeleteBand()}
                   >
@@ -105,7 +105,7 @@ export default function BandMembersPage() {
                   </button>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     disabled={busyDeleteBand}
                     onClick={() => { setShowDeleteConfirm(false); setDeleteConfirmName(''); }}
                   >
@@ -116,7 +116,7 @@ export default function BandMembersPage() {
             ) : (
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--danger"
+                className="btn btn--danger"
                 onClick={() => setShowDeleteConfirm(true)}
               >
                 Delete band

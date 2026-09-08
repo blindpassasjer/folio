@@ -435,7 +435,7 @@ export default function SongList({
           {canTriggerAddSongs && (
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--secondary setlist-action-btn--accent"
+              className="btn btn--secondary btn--accent"
               onClick={canAddSongsToList ? openSongPicker : onAddSongsClick}
               title="Add songs"
             >
@@ -446,7 +446,7 @@ export default function SongList({
           {onDeleteList && (
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--secondary setlist-action-btn--ghost"
+              className="btn btn--secondary btn--ghost"
               onClick={() => void onDeleteList()}
               title={deleteListLabel ?? `Delete ${listEntityLabel}`}
               aria-label={deleteListLabel ?? `Delete ${listEntityLabel}`}
@@ -519,7 +519,7 @@ export default function SongList({
                 <Link
                   to="/songs/new"
                   state={{ addSongScope: { kind: 'band', bandId } }}
-                  className="setlist-action-btn"
+                  className="btn btn--primary"
                 >
                   Add your first song
                 </Link>
@@ -711,7 +711,7 @@ export default function SongList({
             </div>
 
             <div className="song-picker-footer">
-              <button className="setlist-action-btn" onClick={closeSongPicker}>Done</button>
+              <button className="btn btn--primary" onClick={closeSongPicker}>Done</button>
             </div>
           </div>
         </div>

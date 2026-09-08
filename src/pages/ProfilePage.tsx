@@ -269,7 +269,7 @@ export default function ProfilePage() {
             <p>@{user.username ?? 'setup'} · {user.email}</p>
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--ghost profile-logout-btn"
+              className="btn btn--ghost profile-logout-btn"
               disabled={busyLogout}
               onClick={() => { void onLogout(); }}
             >
@@ -299,7 +299,7 @@ export default function ProfilePage() {
                 maxLength={80}
               />
             </label>
-            <button type="submit" className="setlist-action-btn profile-settings-save-btn" disabled={busyFullName}>
+            <button type="submit" className="btn btn--primary profile-settings-save-btn" disabled={busyFullName}>
               {busyFullName ? 'Saving…' : 'Save'}
             </button>
           </form>
@@ -314,7 +314,7 @@ export default function ProfilePage() {
                 required
               />
             </label>
-            <button type="submit" className="setlist-action-btn profile-settings-save-btn" disabled={busyUsername}>
+            <button type="submit" className="btn btn--primary profile-settings-save-btn" disabled={busyUsername}>
               {busyUsername ? 'Saving…' : 'Save'}
             </button>
           </form>
@@ -329,7 +329,7 @@ export default function ProfilePage() {
                 required
               />
             </label>
-            <button type="submit" className="setlist-action-btn profile-settings-save-btn" disabled={busyEmail}>
+            <button type="submit" className="btn btn--primary profile-settings-save-btn" disabled={busyEmail}>
               {busyEmail ? 'Saving…' : 'Save'}
             </button>
           </form>
@@ -354,7 +354,7 @@ export default function ProfilePage() {
                 required
               />
             </label>
-            <button type="submit" className="setlist-action-btn profile-settings-save-btn" disabled={busyPassword}>
+            <button type="submit" className="btn btn--primary profile-settings-save-btn" disabled={busyPassword}>
               {busyPassword ? 'Saving…' : 'Change password'}
             </button>
           </form>
@@ -369,7 +369,7 @@ export default function ProfilePage() {
           </div>
           <button
             type="button"
-            className="setlist-action-btn"
+            className="btn btn--primary"
             disabled={busyExport}
             onClick={() => { void handleExportData(); }}
           >
@@ -391,7 +391,7 @@ export default function ProfilePage() {
             {!deleteConfirmOpen ? (
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--danger"
+                className="btn btn--danger"
                 onClick={onStartDeleteAccount}
               >
                 <Trash2 size={16} /> Delete account
@@ -423,7 +423,7 @@ export default function ProfilePage() {
                 <div className="profile-danger-actions">
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--danger"
+                    className="btn btn--danger"
                     disabled={busyDeleteAccount || !deleteStepOneConfirmed || !deletePhraseMatches}
                     onClick={() => { void onDeleteAccount(); }}
                   >
@@ -431,7 +431,7 @@ export default function ProfilePage() {
                   </button>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     disabled={busyDeleteAccount}
                     onClick={onCancelDeleteAccount}
                   >

@@ -67,7 +67,7 @@ export default function BandSetlistConcertPage() {
     return (
       <div className="not-found">
         <p>This setlist has no songs yet.</p>
-        <button type="button" className="setlist-action-btn" onClick={() => navigate(backRoute)}>Back to setlist</button>
+        <button type="button" className="btn btn--primary" onClick={() => navigate(backRoute)}>Back to setlist</button>
       </div>
     );
   }

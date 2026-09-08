@@ -540,7 +540,7 @@ function RecordingCommentsSection({
         </label>
         <button
           type="button"
-          className="setlist-action-btn setlist-action-btn--secondary"
+          className="btn btn--secondary"
           onClick={() => { void submit(); }}
           disabled={!draft.trim() || submitting}
         >

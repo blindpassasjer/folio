@@ -238,7 +238,7 @@ export default function BandSettingsPage() {
     return (
       <section className="bands-page">
         <p className="bands-status">Band not found.</p>
-        <Link to="/profile" className="setlist-action-btn setlist-action-btn--secondary">Back to bands</Link>
+        <Link to="/profile" className="btn btn--secondary">Back to bands</Link>
       </section>
     );
   }
@@ -247,7 +247,7 @@ export default function BandSettingsPage() {
     return (
       <section className="bands-page">
         <p className="bands-status">Only the band owner can access band settings.</p>
-        <Link to={`/bands/${band.id}/members`} className="setlist-action-btn setlist-action-btn--secondary">
+        <Link to={`/bands/${band.id}/members`} className="btn btn--secondary">
           <ArrowLeft size={16} /> Back to members
         </Link>
       </section>
@@ -500,7 +500,7 @@ export default function BandSettingsPage() {
                           {canEditBand && !isCurrent && (
                             <button
                               type="button"
-                              className="setlist-action-btn setlist-action-btn--secondary bands-logo-use-btn"
+                              className="btn btn--secondary bands-logo-use-btn"
                               onClick={() => { void handleUseLogoAsset(asset); }}
                               disabled={busyLogo}
                             >
@@ -518,7 +518,7 @@ export default function BandSettingsPage() {
                 <div className="media-pagination">
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => setLogoPage((current) => Math.max(1, current - 1))}
                     disabled={logoPage <= 1}
                   >
@@ -527,7 +527,7 @@ export default function BandSettingsPage() {
                   <p className="bands-inline-note">Page {logoPage} of {logoTotalPages}</p>
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => setLogoPage((current) => Math.min(logoTotalPages, current + 1))}
                     disabled={logoPage >= logoTotalPages}
                   >
@@ -566,7 +566,7 @@ export default function BandSettingsPage() {
                   <div className="bands-delete-confirm-actions">
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--danger"
+                      className="btn btn--danger"
                       disabled={busyDeleteBand || deleteConfirmName !== band.name}
                       onClick={() => void handleDeleteBand()}
                     >
@@ -574,7 +574,7 @@ export default function BandSettingsPage() {
                     </button>
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       disabled={busyDeleteBand}
                       onClick={() => { setShowDeleteConfirm(false); setDeleteConfirmName(''); }}
                     >
@@ -585,7 +585,7 @@ export default function BandSettingsPage() {
               ) : (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--danger"
+                  className="btn btn--danger"
                   onClick={() => setShowDeleteConfirm(true)}
                 >
                   Delete band

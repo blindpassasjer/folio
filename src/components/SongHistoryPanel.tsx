@@ -143,7 +143,7 @@ export default function SongHistoryPanel({ bandId, song, canRestore, onRestored 
                 {canRestore && i !== 0 && (
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--secondary"
+                    className="btn btn--secondary"
                     onClick={() => { void handleRestore(revision); }}
                     disabled={restoringId === revision.id}
                   >

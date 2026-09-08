@@ -179,7 +179,6 @@ textarea {
     .song-action-btn,
     .song-picker-close,
     .btn,
-    .setlist-action-btn,
     .concert-nav-btn,
     .fab-add-song,
     .view-toggle-btn,
@@ -620,13 +619,13 @@ input, select, textarea { font: inherit; color: var(--text); }
   white-space: nowrap;
 }
 
-.topbar-coffee-popover-content .setlist-action-btn.topbar-coffee-option.setlist-action-btn--accent {
+.topbar-coffee-popover-content .btn.topbar-coffee-option.btn--accent {
   background: linear-gradient(120deg, #ff5b24, #d6421c);
   border-color: #d6421c;
   color: #fff5ef;
 }
 
-.topbar-coffee-popover-content .setlist-action-btn.topbar-coffee-option.setlist-action-btn--accent:hover {
+.topbar-coffee-popover-content .btn.topbar-coffee-option.btn--accent:hover {
   background: linear-gradient(120deg, #ff6a37, #e14e28);
 }
 
@@ -709,7 +708,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-wrap: wrap;
 }
 
-.topbar-invite-actions .setlist-action-btn {
+.topbar-invite-actions .btn {
   min-height: 2rem;
   padding: .35rem .7rem;
   font-size: .8rem;
@@ -4522,7 +4521,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .recorder-idle-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
 
-.setlist-action-btn,
 .song-picker-add-btn,
 .concert-nav-btn {
   display: inline-flex;
@@ -4543,21 +4541,18 @@ input, select, textarea { font: inherit; color: var(--text); }
   transition: background .15s, color .15s, border-color .15s, box-shadow .15s, transform .08s;
 }
 
-.setlist-action-btn:hover,
 .song-picker-add-btn:hover {
   background: linear-gradient(135deg, var(--accent-h), color-mix(in srgb, var(--accent-h) 80%, #003d99));
   box-shadow: 0 2px 8px color-mix(in srgb, var(--accent) 45%, transparent);
   transform: translateY(-1px);
 }
 
-.setlist-action-btn:focus-visible,
 .song-picker-add-btn:focus-visible,
 .concert-nav-btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 
-.setlist-action-btn:disabled,
 .song-picker-add-btn:disabled,
 .concert-nav-btn:disabled {
   cursor: not-allowed;
@@ -4565,9 +4560,10 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 /* ─── Button (canonical) ─────────────────────────────────────────────────────────
-   Shared vocabulary for the <Button> component (src/components/ui/Button.tsx).
-   The bespoke *-btn classes (setlist-action-btn, icon-btn, …) are not folded in
-   yet — migrate those call sites to .btn + modifiers over time. */
+   .btn + modifiers back the <Button> component (src/components/ui/Button.tsx) and
+   are used directly across the app. Variants: --primary --secondary --danger
+   --accent --concert --ghost; sizes --sm; --block --icon. On band pages
+   (.bands-page) primary/accent/secondary pick up the active band's hue. */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -4599,10 +4595,18 @@ input, select, textarea { font: inherit; color: var(--text); }
   opacity: .6;
 }
 
-.btn--secondary:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--surface) 40%, var(--bg));
-  border-color: color-mix(in srgb, var(--border) 60%, var(--muted));
+.btn:hover:not(:disabled) {
   transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--bg);
 }
 
 .btn--primary {
@@ -4619,14 +4623,40 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .btn--danger {
-  border-color: transparent;
-  background: var(--danger);
+  background: #dc2626;
   color: #fff;
+  border-color: #dc2626;
 }
 
 .btn--danger:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--danger) 88%, #000);
-  transform: translateY(-1px);
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.btn--accent {
+  background: linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #fff));
+  border-color: var(--accent);
+  color: var(--accent-contrast, #f4fffd);
+}
+
+.btn--accent:hover:not(:disabled) {
+  background: linear-gradient(120deg, var(--accent-h, var(--accent)), color-mix(in srgb, var(--accent-h, var(--accent)) 70%, #fff));
+  border-color: var(--accent-h, var(--accent));
+}
+
+.btn--concert {
+  border-color: transparent;
+  background: linear-gradient(120deg, #0f766e, #0b8f84);
+  color: #f4fffd;
+}
+
+.btn--concert:hover:not(:disabled) {
+  background: linear-gradient(120deg, #0a645e, #0a7a71);
+}
+
+.btn--concert:disabled {
+  cursor: not-allowed;
+  opacity: .6;
 }
 
 .btn--ghost {
@@ -4635,7 +4665,8 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .btn--ghost:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--surface) 40%, var(--bg));
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 24%, transparent);
 }
 
 .btn--sm {
@@ -6552,30 +6583,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .6rem;
 }
 
-.setlist-action-btn {
-  font-size: .85rem;
-}
-
-.setlist-action-btn--secondary {
-  background: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
-
-.setlist-action-btn--secondary:hover {
-  background: var(--bg);
-}
-
-.setlist-action-btn--ghost {
-  background: transparent;
-  border-color: transparent;
-}
-
-.setlist-action-btn--ghost:hover {
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-  border-color: color-mix(in srgb, var(--accent) 24%, transparent);
-}
-
 .profile-logout-btn {
   color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 40%, transparent);
@@ -6583,42 +6590,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .profile-logout-btn:hover {
   color: var(--accent-h, var(--accent));
-}
-
-.setlist-action-btn--accent {
-  background: linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #fff));
-  border-color: var(--accent);
-  color: var(--accent-contrast, #f4fffd);
-}
-
-.setlist-action-btn--accent:hover {
-  background: linear-gradient(120deg, var(--accent-h, var(--accent)), color-mix(in srgb, var(--accent-h, var(--accent)) 70%, #fff));
-  border-color: var(--accent-h, var(--accent));
-}
-
-.setlist-action-btn--concert {
-  background: linear-gradient(120deg, #0f766e, #0b8f84);
-  color: #f4fffd;
-}
-
-.setlist-action-btn--concert:hover {
-  background: linear-gradient(120deg, #0a645e, #0a7a71);
-}
-
-.setlist-action-btn--concert:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.setlist-action-btn--danger {
-  background: #dc2626;
-  color: #fff;
-  border-color: #dc2626;
-}
-
-.setlist-action-btn--danger:hover {
-  background: #b91c1c;
-  border-color: #b91c1c;
 }
 
 .setlist-info {
@@ -8032,7 +8003,7 @@ input, select, textarea { font: inherit; color: var(--text); }
     flex-direction: column;
   }
 
-  .topbar-invite-actions .setlist-action-btn {
+  .topbar-invite-actions .btn {
     width: 100%;
     justify-content: center;
   }
@@ -8050,9 +8021,8 @@ input, select, textarea { font: inherit; color: var(--text); }
   .resource-header-actions {
     width: 100%;
   }
-  .setlist-action-btn {
+  .resource-header-actions .btn {
     flex: 1;
-    justify-content: center;
   }
 
   .concert-mode {
@@ -9663,57 +9633,45 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 }
 
-.bands-page .setlist-action-btn {
-  background: var(--bands-hue);
+/* On band pages the primary/accent buttons pick up the active band's hue. */
+.bands-page .btn--primary {
   border-color: var(--bands-hue);
+  background: var(--bands-hue);
   color: var(--bands-hue-contrast);
 }
 
-.bands-page .setlist-action-btn:hover {
+.bands-page .btn--primary:hover:not(:disabled) {
   background: color-mix(in srgb, var(--bands-hue) 84%, #000);
   border-color: color-mix(in srgb, var(--bands-hue) 84%, #000);
 }
 
-.bands-page .setlist-action-btn--secondary {
+.bands-page .btn--secondary {
   background: var(--surface);
   color: var(--bands-hue);
   border-color: color-mix(in srgb, var(--bands-hue) 28%, var(--border));
 }
 
-.bands-page .setlist-action-btn--secondary:hover {
+.bands-page .btn--secondary:hover:not(:disabled) {
   background: var(--bands-hue-soft);
 }
 
-.bands-page .setlist-action-btn--accent {
+.bands-page .btn--accent {
   background: linear-gradient(120deg, color-mix(in srgb, var(--bands-hue) 86%, #0f766e), color-mix(in srgb, var(--bands-hue) 68%, #14b8a6));
   border-color: color-mix(in srgb, var(--bands-hue) 84%, #0f766e);
   color: #f4fffd;
 }
 
-.bands-page .setlist-action-btn--accent:hover {
+.bands-page .btn--accent:hover:not(:disabled) {
   background: linear-gradient(120deg, color-mix(in srgb, var(--bands-hue) 82%, #0d5f5a), color-mix(in srgb, var(--bands-hue) 64%, #0d9488));
   border-color: color-mix(in srgb, var(--bands-hue) 80%, #0d5f5a);
 }
 
-.bands-page .setlist-action-btn--concert {
-  background: linear-gradient(120deg, #0f766e, #0b8f84);
+.bands-page .btn--concert {
   border-color: #0f766e;
-  color: #f4fffd;
 }
 
-.bands-page .setlist-action-btn--concert:hover {
-  background: linear-gradient(120deg, #0a645e, #0a7a71);
-  border-color: #0a645e;
-}
-
-.bands-page .setlist-action-btn--concert:disabled {
-  background: linear-gradient(120deg, #0f766e, #0b8f84);
-  border-color: #0f766e;
-  color: #f4fffd;
-}
-
-.bands-page .setlist-action-btn--danger,
-.bands-page .setlist-action-btn--danger:hover {
+.bands-page .btn--danger,
+.bands-page .btn--danger:hover:not(:disabled) {
   color: #fff;
 }
 
@@ -10232,8 +10190,8 @@ input, select, textarea { font: inherit; color: var(--text); }
     gap: .45rem;
   }
 
-  .song-list-sticky .setlist-action-btn,
-  .list-sticky-header .setlist-action-btn {
+  .song-list-sticky .btn,
+  .list-sticky-header .btn {
     font-size: .8rem;
     min-height: 2.35rem;
   }
@@ -10524,11 +10482,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   }
 }
 
-/* Active state for share button (public link enabled) */
-.setlist-action-btn--active {
-  color: var(--accent, #0f766e);
-  border-color: var(--accent, #0f766e);
-}
 
 .tech-rider-panels {
   --sticky-header-content-gap: .75rem;

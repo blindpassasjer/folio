@@ -190,7 +190,7 @@ export default function BandDetailPage() {
     return (
       <section className="bands-page">
         <p className="bands-status">Band not found.</p>
-        <Link to="/profile" className="setlist-action-btn setlist-action-btn--secondary">Back to bands</Link>
+        <Link to="/profile" className="btn btn--secondary">Back to bands</Link>
       </section>
     );
   }
@@ -438,7 +438,7 @@ export default function BandDetailPage() {
       return (
         <section className="bands-page">
           <p className="bands-status">Band songlist not found.</p>
-          <Link to={`/bands/${band.id}/library`} className="setlist-action-btn setlist-action-btn--secondary">Back to band library</Link>
+          <Link to={`/bands/${band.id}/library`} className="btn btn--secondary">Back to band library</Link>
         </section>
       );
     }
@@ -467,7 +467,7 @@ export default function BandDetailPage() {
           headerActions={canEditBand ? (
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--secondary"
+              className="btn btn--secondary"
               onClick={() => songListImportInputRef.current?.click()}
               title={isImportingSongList ? 'Importing songlist…' : 'Import songlist from file'}
               aria-label="Import songlist from file"
@@ -519,7 +519,7 @@ export default function BandDetailPage() {
       return (
         <section className="bands-page">
           <p className="bands-status">Band setlist not found.</p>
-          <Link to={`/bands/${band.id}/library`} className="setlist-action-btn setlist-action-btn--secondary">Back to band library</Link>
+          <Link to={`/bands/${band.id}/library`} className="btn btn--secondary">Back to band library</Link>
         </section>
       );
     }
@@ -553,7 +553,7 @@ export default function BandDetailPage() {
           extraActions={canEditBand ? (
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--secondary"
+              className="btn btn--secondary"
               onClick={() => setlistImportInputRef.current?.click()}
               title={isImportingSetlist ? 'Importing setlist…' : 'Import setlist from file'}
               aria-label="Import setlist from file"
@@ -712,7 +712,7 @@ export default function BandDetailPage() {
             {canEditBand && allBandsSongs.length > 0 && (
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--secondary"
+                className="btn btn--secondary"
                 onClick={() => setShowBandPicker(true)}
                 title="Add song from another band library"
                 aria-label="Add song from another band library"
@@ -723,7 +723,7 @@ export default function BandDetailPage() {
             {canEditBand && (
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--secondary"
+                className="btn btn--secondary"
                 onClick={() => importInputRef.current?.click()}
                 title={isImportingSongs ? 'Importing songs…' : 'Import song files or a .zip backup (ChordPro, OnSong, Ultimate Guitar…)'}
                 aria-label={isImportingSongs ? 'Importing songs' : 'Import song files or a zip backup'}
@@ -734,7 +734,7 @@ export default function BandDetailPage() {
             )}
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--secondary"
+              className="btn btn--secondary"
               onClick={() => navigate(isOwner ? `/bands/${band.id}/settings` : `/bands/${band.id}/members`)}
               title="Band settings"
             >
@@ -789,7 +789,7 @@ export default function BandDetailPage() {
               )}
             </div>
             <div className="song-picker-footer">
-              <button className="setlist-action-btn" onClick={closeBandPicker}>Done</button>
+              <button className="btn btn--primary" onClick={closeBandPicker}>Done</button>
             </div>
           </div>
         </div>

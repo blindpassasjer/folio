@@ -111,7 +111,7 @@ export default function AdminInvitesPage() {
               disabled={busyCreate}
             />
           </label>
-          <button type="submit" className="setlist-action-btn" disabled={busyCreate}>
+          <button type="submit" className="btn btn--primary" disabled={busyCreate}>
             <UserPlus size={15} /> {busyCreate ? 'Creating link…' : 'Create invite link'}
           </button>
         </form>
@@ -157,7 +157,7 @@ export default function AdminInvitesPage() {
                   <div className="profile-invite-actions">
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void handleCopyLink(inviteLinkFor(invite))}
                       title="Copy invite link"
                     >
@@ -165,7 +165,7 @@ export default function AdminInvitesPage() {
                     </button>
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       disabled={busy}
                       onClick={() => void handleRevoke(invite)}
                     >

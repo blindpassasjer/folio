@@ -863,7 +863,7 @@ export default function StageplotEditor({
             <div className="resource-header-actions">
               <button
                 type="button"
-                className="setlist-action-btn setlist-action-btn--accent"
+                className="btn btn--accent"
                 onClick={() => void onCopyPublicLink()}
                 title={stageplot.publicShareEnabled ? 'Copy public link' : 'Create & copy public link'}
                 aria-label={stageplot.publicShareEnabled ? 'Copy public link' : 'Create and copy public link'}
@@ -873,7 +873,7 @@ export default function StageplotEditor({
               {canEdit ? (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => void handleDeleteStageplot()}
                   title={`Delete stageplot ${stageplot.name}`}
                   aria-label={`Delete stageplot ${stageplot.name}`}

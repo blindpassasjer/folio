@@ -381,7 +381,7 @@ export default function BandTechRiderPanel({
                   <>
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--accent"
+                      className="btn btn--accent"
                       onClick={() => void handleCopyRiderPublicLink(activeRider.id, true)}
                       title="Copy public link"
                     >
@@ -389,7 +389,7 @@ export default function BandTechRiderPanel({
                     </button>
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void handleDisableRiderPublicLink(activeRider.id)}
                       title="Disable public link"
                     >
@@ -399,7 +399,7 @@ export default function BandTechRiderPanel({
                 ) : (
                   <button
                     type="button"
-                    className="setlist-action-btn setlist-action-btn--accent"
+                    className="btn btn--accent"
                     onClick={() => void handleCopyRiderPublicLink(activeRider.id, false)}
                     title="Create & copy public link"
                   >
@@ -410,7 +410,7 @@ export default function BandTechRiderPanel({
               {canEdit && activeRider ? (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => riderImportInputRef.current?.click()}
                   disabled={isImportingRider}
                   title={isImportingRider ? 'Importing rider…' : 'Import rider from file'}
@@ -422,7 +422,7 @@ export default function BandTechRiderPanel({
               {activeRider ? (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => void handleDownloadRider()}
                   disabled={busyDownload}
                   title="Download ZIP"
@@ -433,7 +433,7 @@ export default function BandTechRiderPanel({
               {canEdit && activeRider ? (
                 <button
                   type="button"
-                  className="setlist-action-btn setlist-action-btn--secondary"
+                  className="btn btn--secondary"
                   onClick={() => void handleDeleteActiveRider()}
                   title={`Delete rider ${activeRider.name}`}
                 >

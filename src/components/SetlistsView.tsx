@@ -441,7 +441,7 @@ export default function SetlistsView({
           <div className="resource-header-actions">
             {songs.length > 0 ? (
               <Link
-                className="setlist-action-btn setlist-action-btn--concert"
+                className="btn btn--concert"
                 to={effectiveConcertRoute}
                 title={`Start concert for ${setlistName}`}
               >
@@ -449,7 +449,7 @@ export default function SetlistsView({
               </Link>
             ) : (
               <button
-                className="setlist-action-btn setlist-action-btn--concert"
+                className="btn btn--concert"
                 type="button"
                 disabled
                 title="Add songs to enable concert mode"
@@ -459,7 +459,7 @@ export default function SetlistsView({
             )}
             {songs.length > 0 && (
               <Link
-                className="setlist-action-btn setlist-action-btn--secondary"
+                className="btn btn--secondary"
                 to={`/bands/${bandId}/setlists/${setlistId}/print`}
                 title={`Print / export ${setlistName} as PDF`}
                 aria-label={`Print ${setlistName}`}
@@ -469,7 +469,7 @@ export default function SetlistsView({
             )}
             {extraActions}
             <button
-              className="setlist-action-btn setlist-action-btn--secondary"
+              className="btn btn--secondary"
               onClick={openSongPicker}
               title="Add songs"
             >
@@ -477,7 +477,7 @@ export default function SetlistsView({
             </button>
             {songs.length > 1 && (
               <button
-                className={`setlist-action-btn${reorderMode ? ' setlist-action-btn--accent' : ' setlist-action-btn--secondary'}`}
+                className={`btn${reorderMode ? ' btn--accent' : ' btn--secondary'}`}
                 onClick={() => setReorderMode((v) => !v)}
                 title={reorderMode ? 'Done reordering' : 'Reorder songs'}
                 aria-label={reorderMode ? 'Done reordering' : 'Reorder songs'}
@@ -488,7 +488,7 @@ export default function SetlistsView({
             )}
             {canDeleteSetlist ? (
               <button
-                className="setlist-action-btn setlist-action-btn--secondary"
+                className="btn btn--secondary"
                 onClick={() => void handleDeleteSetlist()}
                 title={`Delete setlist ${setlistName}`}
                 aria-label={`Delete setlist ${setlistName}`}
@@ -602,21 +602,21 @@ export default function SetlistsView({
                       <div className="setlist-song-note-actions">
                         <button
                           type="button"
-                          className="setlist-action-btn"
+                          className="btn btn--primary"
                           onClick={() => void saveSongNote(song.id)}
                         >
                           Save note
                         </button>
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--secondary"
+                          className="btn btn--secondary"
                           onClick={() => void deleteSongNote(song.id)}
                         >
                           Delete note
                         </button>
                         <button
                           type="button"
-                          className="setlist-action-btn setlist-action-btn--secondary"
+                          className="btn btn--secondary"
                           onClick={cancelEditingSongNote}
                         >
                           Cancel
@@ -711,7 +711,7 @@ export default function SetlistsView({
             </div>
 
             <div className="song-picker-footer">
-              <button className="setlist-action-btn" onClick={closeSongPicker}>Done</button>
+              <button className="btn btn--primary" onClick={closeSongPicker}>Done</button>
             </div>
           </div>
         </div>

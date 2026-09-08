@@ -125,7 +125,7 @@ export default function TrashView({
           <div className="resource-header-actions">
             <button
               type="button"
-              className="setlist-action-btn setlist-action-btn--danger"
+              className="btn btn--danger"
               onClick={() => void handleEmptyTrash()}
               disabled={isBusy}
             >
@@ -157,7 +157,7 @@ export default function TrashView({
                   {onRestore ? (
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--secondary"
+                      className="btn btn--secondary"
                       onClick={() => void handleRestore(item.trashId)}
                       disabled={isBusy}
                     >
@@ -168,7 +168,7 @@ export default function TrashView({
                   {onDeletePermanently ? (
                     <button
                       type="button"
-                      className="setlist-action-btn setlist-action-btn--danger"
+                      className="btn btn--danger"
                       onClick={() => void handleDeletePermanently(item.trashId)}
                       disabled={isBusy}
                     >
