@@ -97,7 +97,6 @@
   --page-copy-size: var(--text-base);
   --meta-copy-size: var(--text-xs);
   --font-mono:  'JetBrains Mono', 'Courier New', Courier, monospace;
-  --font-display: 'Space Grotesk', 'Inter', 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
 }
 
@@ -1086,7 +1085,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .song-list-heading,
 .resource-title {
-  font-family: var(--font-display);
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
@@ -2029,7 +2027,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .song-view-title {
-  font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
   line-height: 1.2;
@@ -4163,7 +4160,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   padding: var(--space-xl);
   margin-bottom: .75rem;
 }
-.recorder-title { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; margin-bottom: .75rem; }
+.recorder-title { font-size: var(--text-sm); font-weight: 700; margin-bottom: .75rem; }
 
 /* SongRecorder root */
 .song-recorder {
@@ -4716,7 +4713,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 /* ─── Add Song Form ──────────────────────────────────────────────────────────── */
-.add-song-page h1 { font-family: var(--font-display); margin-bottom: 1.25rem; }
+.add-song-page h1 { margin-bottom: 1.25rem; }
 
 .add-song-form {
   display: flex;
@@ -5059,7 +5056,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .chord-finder-modal-title {
-  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
@@ -5127,7 +5123,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .tab-seq-title {
-  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 700;
   color: var(--text);
@@ -5479,7 +5474,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-hero-title {
-  font-family: var(--font-display);
   margin: 0;
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1.1;
@@ -5568,7 +5562,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .login-title {
-  font-family: var(--font-display);
   margin: 0;
   font-size: var(--text-lg);
   font-weight: 700;
@@ -5845,7 +5838,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .sidebar-title {
-  font-family: var(--font-display);
   font-size: var(--text-base);
   font-weight: 700;
   text-transform: none;
@@ -8502,7 +8494,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .share-menu-title {
-  font-family: var(--font-display);
   font-weight: 700;
   color: var(--text);
 }
@@ -8688,7 +8679,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-account-hero-copy h1 {
-  font-family: var(--font-display);
   margin: 0;
   font-size: clamp(1.7rem, 1.25rem + 1.4vw, 2.15rem);
   line-height: 1.15;
@@ -8773,7 +8763,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .profile-section-heading h2,
 .profile-section-heading h3 {
-  font-family: var(--font-display);
   margin: 0;
   font-size: var(--section-title-size);
   font-weight: 600;
@@ -9037,7 +9026,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-invites-header h1 {
-  font-family: var(--font-display);
   font-size: var(--page-title-size);
   line-height: 1.2;
 }
@@ -9128,7 +9116,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 .bands-header:not(.bands-header--detail) h1,
 .bands-header:not(.bands-header--detail) .song-list-heading,
 .bands-header:not(.bands-header--detail) .resource-title {
-  font-family: var(--font-display);
   font-size: var(--page-title-size);
   line-height: 1.2;
 }
@@ -9241,7 +9228,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-section-heading {
-  font-family: var(--font-display);
   margin: 0 0 .95rem;
   font-size: var(--section-title-size);
   font-weight: 600;
@@ -9979,7 +9965,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .public-setlist-title {
-  font-family: var(--font-display);
   font-size: clamp(1.45rem, 1.15rem + 1.1vw, 1.9rem);
   font-weight: 700;
   margin: 0 0 .4rem;
@@ -10108,7 +10093,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .public-presskit-band-name,
 .public-share-band-name {
-  font-family: var(--font-display);
   margin: 0 0 .15rem;
   font-size: clamp(1.8rem, 1.4rem + 1.3vw, 2.25rem);
   font-weight: 700;
@@ -11355,7 +11339,6 @@ input.stageplot-legend-number:focus {
 }
 
 .press-kit-section-title {
-  font-family: var(--font-display);
   margin: 0;
   font-size: var(--text-base);
   font-weight: 700;
