@@ -46,6 +46,8 @@
   --bands-hue-soft: #dde9f8;
   --bands-hue-contrast: #ffffff;
   --danger:     #c0392b;
+  --danger-strong: #a5342a;
+  --danger-contrast: #ffffff;
   --notes-draw: #27ae60;
   --chord:      #1a6fc4;
   --chord-bg:   #e6f0fb;
@@ -113,6 +115,8 @@
   --bands-hue-soft: #152640;
   --bands-hue-contrast: #ffffff;
   --danger:     #e05c4e;
+  --danger-strong: #ef7468;
+  --danger-contrast: #1c1a18;
   --notes-draw: #5be39a;
   --chord:      #6aadff;
   --chord-bg:   #1a2e45;
@@ -144,6 +148,8 @@
   --bands-hue-soft: #332b00;
   --bands-hue-contrast: #000000;
   --danger:     #ff453a;
+  --danger-strong: #ff6b61;
+  --danger-contrast: #000000;
   --notes-draw: #32ff7e;
   --chord:      #ffd60a;
   --chord-bg:   #332b00;
@@ -2712,10 +2718,10 @@ input, select, textarea { font: inherit; color: var(--text); }
 .song-view-header .song-toolbar-row--controls .transpose-btn--reset,
 .song-view-header .song-toolbar-row--controls .transpose-btn--reset:hover {
   color: rgb(249,237,237);
-  color: color-mix(in srgb, #fff 92%, #b91c1c);
-  border-color: color-mix(in srgb, #b91c1c 45%, var(--song-item-border));
+  color: color-mix(in srgb, #fff 92%, var(--danger-strong));
+  border-color: color-mix(in srgb, var(--danger-strong) 45%, var(--song-item-border));
   background: rgb(135,25,25);
-  background: color-mix(in srgb, #b91c1c 70%, #111);
+  background: color-mix(in srgb, var(--danger-strong) 70%, #111);
 }
 
 .concert-tool-row .transpose-control {
@@ -4090,7 +4096,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   border-color: color-mix(in srgb, var(--border) 60%, var(--accent));
 }
 .icon-btn--delete:hover {
-  color: #b42318;
+  color: var(--danger-strong);
 }
 .play-btn {
   display: flex;
@@ -4651,14 +4657,14 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .btn--danger {
-  background: #dc2626;
-  color: #fff;
-  border-color: #dc2626;
+  background: var(--danger);
+  color: var(--danger-contrast);
+  border-color: var(--danger);
 }
 
 .btn--danger:hover:not(:disabled) {
-  background: #b91c1c;
-  border-color: #b91c1c;
+  background: var(--danger-strong);
+  border-color: var(--danger-strong);
 }
 
 .btn--accent {
@@ -7247,7 +7253,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .concert-session-error {
   margin: var(--space-2xs) 0 0;
   font-size: var(--text-xs);
-  color: #c0392b;
+  color: var(--danger);
   text-align: center;
 }
 
@@ -7637,7 +7643,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: .58rem;
   height: .58rem;
   border-radius: var(--radius-pill);
-  background: #dc2626;
+  background: var(--danger);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .12);
 }
 
@@ -8852,7 +8858,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .profile-danger-card {
-  border-color: color-mix(in srgb, #b91c1c 22%, var(--border));
+  border-color: color-mix(in srgb, var(--danger-strong) 22%, var(--border));
 }
 
 .profile-account-danger-zone {
@@ -8860,9 +8866,9 @@ input, select, textarea { font: inherit; color: var(--text); }
   flex-direction: column;
   gap: var(--space-lg);
   padding: var(--space-lg);
-  border: 1px solid color-mix(in srgb, #b91c1c 26%, var(--border));
+  border: 1px solid color-mix(in srgb, var(--danger-strong) 26%, var(--border));
   border-radius: var(--radius-lg);
-  background: color-mix(in srgb, #b91c1c 7%, var(--surface));
+  background: color-mix(in srgb, var(--danger-strong) 7%, var(--surface));
 }
 
 .profile-account-danger-zone-header {
@@ -8876,7 +8882,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  color: color-mix(in srgb, #b91c1c 74%, var(--text));
+  color: color-mix(in srgb, var(--danger-strong) 74%, var(--text));
 }
 
 .profile-account-delete-confirm {
@@ -9009,8 +9015,8 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: var(--space-sm);
   padding: var(--space-lg);
   border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, #e5484d 45%, var(--border));
-  background: color-mix(in srgb, #e5484d 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--danger) 45%, var(--border));
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface));
 }
 
 .admin-user-delete-confirm-actions {
@@ -9427,9 +9433,9 @@ input, select, textarea { font: inherit; color: var(--text); }
   width: 100%;
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
-  border: 1px solid color-mix(in srgb, #d32f2f 30%, var(--border));
-  background: color-mix(in srgb, #d32f2f 8%, var(--surface));
-  color: #d32f2f;
+  border: 1px solid color-mix(in srgb, var(--danger) 30%, var(--border));
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface));
+  color: var(--danger);
   font-size: var(--text-sm);
   font-weight: 500;
   cursor: pointer;
@@ -9437,8 +9443,8 @@ input, select, textarea { font: inherit; color: var(--text); }
 }
 
 .bands-logo-remove-btn:hover {
-  background: color-mix(in srgb, #d32f2f 16%, var(--surface));
-  border-color: color-mix(in srgb, #d32f2f 50%, var(--border));
+  background: color-mix(in srgb, var(--danger) 16%, var(--surface));
+  border-color: color-mix(in srgb, var(--danger) 50%, var(--border));
 }
 
 .bands-logo-remove-btn:disabled {
