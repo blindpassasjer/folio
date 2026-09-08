@@ -114,13 +114,13 @@ function randomNote(w: number, h: number, spreadY = false): NoteParticle {
   return {
     x: Math.random() * w,
     y: spreadY ? Math.random() * h : h + 20 + Math.random() * 120,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: -(0.6 + Math.random() * 1.0),
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: -(0.35 + Math.random() * 0.5),
     symbol: NOTE_SYMBOLS[Math.floor(Math.random() * NOTE_SYMBOLS.length)],
-    size: 18 + Math.random() * 34,
-    opacity: 0.45 + Math.random() * 0.45,
+    size: 18 + Math.random() * 30,
+    opacity: 0.25 + Math.random() * 0.3,
     angle: (Math.random() - 0.5) * 0.5,
-    va: (Math.random() - 0.5) * 0.012,
+    va: (Math.random() - 0.5) * 0.008,
   };
 }
 
@@ -133,7 +133,8 @@ function MusicNotesBg() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const COUNT = 40;
+    const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const COUNT = 16;
     let notes: NoteParticle[] = [];
     let raf: number;
     let accentColor = '#1a6fc4';
@@ -147,6 +148,7 @@ function MusicNotesBg() {
       cvs.height = cvs.parentElement ? cvs.parentElement.offsetHeight : window.innerHeight;
       accentColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--accent').trim() || '#1a6fc4';
+      if (reduceMotion) paint();
     }
 
     syncSize();
@@ -157,15 +159,9 @@ function MusicNotesBg() {
     const ro = new ResizeObserver(syncSize);
     ro.observe(document.documentElement);
 
-    function draw() {
+    function paint() {
       context.clearRect(0, 0, cvs.width, cvs.height);
       for (const n of notes) {
-        n.x += n.vx;
-        n.y += n.vy;
-        n.angle += n.va;
-        if (n.y < -60) {
-          Object.assign(n, randomNote(cvs.width, cvs.height));
-        }
         context.save();
         context.translate(n.x, n.y);
         context.rotate(n.angle);
@@ -175,10 +171,28 @@ function MusicNotesBg() {
         context.fillText(n.symbol, 0, 0);
         context.restore();
       }
+    }
+
+    function draw() {
+      for (const n of notes) {
+        n.x += n.vx;
+        n.y += n.vy;
+        n.angle += n.va;
+        if (n.y < -60) {
+          Object.assign(n, randomNote(cvs.width, cvs.height));
+        }
+      }
+      paint();
       raf = requestAnimationFrame(draw);
     }
 
-    draw();
+    if (reduceMotion) {
+      // Respect prefers-reduced-motion: render a single static frame, no loop.
+      notes = Array.from({ length: COUNT }, () => randomNote(cvs.width, cvs.height, true));
+      paint();
+    } else {
+      draw();
+    }
 
     return () => {
       cancelAnimationFrame(raf);
@@ -193,17 +207,6 @@ function LoginBackdrop() {
   return (
     <div className="login-bg" aria-hidden="true">
       <MusicNotesBg />
-      <span className="login-glow login-glow--1" />
-      <span className="login-glow login-glow--2" />
-      <span className="login-ring login-ring--1" />
-      <span className="login-ring login-ring--2" />
-      <span className="login-spark login-spark--1" />
-      <span className="login-spark login-spark--2" />
-      <span className="login-spark login-spark--3" />
-      <span className="login-spark login-spark--4" />
-      <span className="login-spark login-spark--5" />
-      <span className="login-spark login-spark--6" />
-      <span className="login-grid" />
     </div>
   );
 }

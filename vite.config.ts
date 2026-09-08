@@ -193,6 +193,7 @@ export default defineConfig(({ command }) => ({
         'localhost',
         '127.0.0.1',
         'code.manriquez.no',
+        'test.manriquez.no',
         ...(devOrigin ? [devOrigin.hostname] : []),
         ...(process.env.VITE_DEV_HOST ? [process.env.VITE_DEV_HOST] : []),
         ...(resolveAllowedHostFromProxyUri() ? [resolveAllowedHostFromProxyUri() as string] : []),
