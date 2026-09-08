@@ -500,7 +500,7 @@ export default function SongView({ song, accentColor, bandId }: Props) {
                     : transpose === 0
                       ? 'Original key'
                       : `${transpose > 0 ? '+' : ''}${transpose} semitones`}
-                  {transposeIsSaved && <span className="transpose-scope-tag"> · saved</span>}
+                  {transposeIsSaved && <span className="transpose-scope-tag"> (saved)</span>}
                 </span>
                 <button
                   onClick={() => adjustTranspose((t) => t + 1)}
