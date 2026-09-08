@@ -69,17 +69,24 @@ const authClient: AuthClient = {
   getCurrentUser: () => delay(store.getDemoUser()),
   onAuthStateChanged(callback) {
     let cancelled = false;
-    void delay(store.getDemoUser()).then((user) => {
+    void delay(store.isDemoSignedIn() ? store.getDemoUser() : null).then((user) => {
       if (!cancelled) callback(user);
     });
     return () => {
       cancelled = true;
     };
   },
-  login: () => delay({ user: store.getDemoUser(), error: null }),
+  login: () => {
+    store.setDemoSignedIn(true);
+    return delay({ user: store.getDemoUser(), error: null });
+  },
   getInvite: () => delay({ invite: null, error: 'Invites are disabled in the demo.' }),
-  acceptInvite: () => delay({ user: store.getDemoUser(), error: null }),
+  acceptInvite: () => {
+    store.setDemoSignedIn(true);
+    return delay({ user: store.getDemoUser(), error: null });
+  },
   logout: async () => {
+    store.setDemoSignedIn(false);
     store.resetDemoStore();
     await delay(undefined);
   },

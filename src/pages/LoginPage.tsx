@@ -5,6 +5,7 @@ import { Music2, ListMusic, Users, MonitorSpeaker, Newspaper, Activity, type Luc
 import { useAuth } from '../context/AuthContext';
 import BrandMark from '../components/BrandMark';
 import { Button } from '../components/ui/Button';
+import { isDemoMode } from '../lib/demo/demoMode';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 const REPO_URL = 'https://github.com/blindpassasjer/gigboy';
@@ -215,8 +216,8 @@ export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(isDemoMode ? 'demo@example.com' : '');
+  const [password, setPassword] = useState(isDemoMode ? 'demo' : '');
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
 
@@ -245,6 +246,13 @@ export default function LoginPage() {
         <LoginHero />
         <div className="login-card">
           <h1 className="login-title">Sign in</h1>
+
+          {isDemoMode && (
+            <p className="login-demo-note">
+              This is a live demo — any email and password will sign you in against
+              sample data stored only in your browser.
+            </p>
+          )}
 
           <form className="login-form" onSubmit={handleSubmit} noValidate>
             <div className="form-field">

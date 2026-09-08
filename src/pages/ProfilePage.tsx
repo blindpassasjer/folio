@@ -265,7 +265,6 @@ export default function ProfilePage() {
         <div className="profile-account-hero-main">
           <UserAvatar label={displayName} size="lg" />
           <div className="profile-account-hero-copy">
-            <span className="profile-account-kicker">Account</span>
             <h1>{displayName}</h1>
             <p>@{user.username ?? 'setup'} · {user.email}</p>
             <button

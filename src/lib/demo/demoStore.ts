@@ -16,9 +16,35 @@ import type { BandLogoAsset } from '../bandLogos';
 import type { SongRecording } from '../songRecordings';
 
 const STORAGE_KEY = 'gigboy-demo-store';
+const SESSION_KEY = 'gigboy-demo-session';
 const DEMO_USER_ID = 'demo-user';
 const DEMO_BAND_ID = 'demo-band';
 const OTHER_MEMBER_ID = 'demo-member-2';
+
+/**
+ * The public GitHub Pages demo sets `VITE_DEMO_AUTOLOGIN=true` so visitors land
+ * straight in the app. `npm run dev:demo` leaves it unset, so the login page is
+ * shown and any email/password signs you in against the seeded demo data.
+ */
+const DEMO_AUTOLOGIN = import.meta.env.VITE_DEMO_AUTOLOGIN === 'true';
+
+export function isDemoSignedIn(): boolean {
+  if (DEMO_AUTOLOGIN) return true;
+  try {
+    return localStorage.getItem(SESSION_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+export function setDemoSignedIn(signedIn: boolean): void {
+  try {
+    if (signedIn) localStorage.setItem(SESSION_KEY, '1');
+    else localStorage.removeItem(SESSION_KEY);
+  } catch {
+    // Storage unavailable (private browsing) — session lasts until reload.
+  }
+}
 
 /** Simulates network latency so loading states in the UI look/feel real. */
 export function delay<T>(value: T, ms = 220): Promise<T> {

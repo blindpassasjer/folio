@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "dev:demo": "VITE_DEMO=true vite --host 0.0.0.0",
     "build": "tsc && vite build",
     "build:demo": "tsc && vite build --outDir dist-demo",
     "generate:pwa-icons": "node scripts/generate-pwa-icons.mjs",

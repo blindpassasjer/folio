@@ -390,8 +390,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 
 .topbar-storage-text strong {
   font-size: .72rem;
-  letter-spacing: .03em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--muted);
 }
 
@@ -646,8 +645,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .topbar-invites-group h3 {
   margin: 0;
   font-size: .78rem;
-  letter-spacing: .03em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--muted);
 }
 
@@ -2066,9 +2064,8 @@ input, select, textarea { font: inherit; color: var(--text); }
   gap: .4rem;
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .01em;
   color: var(--song-item-muted);
-  text-transform: uppercase;
 }
 
 .song-toolbar-section-subtitle {
@@ -2159,8 +2156,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   gap: .35rem;
   font-size: .72rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--song-toolbar-elevated-text);
   font-weight: 700;
 }
@@ -4873,8 +4869,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .toolbar-label {
   font-size: .72rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .01em;
   color: var(--muted);
   margin-right: .1rem;
 }
@@ -5527,6 +5522,17 @@ input, select, textarea { font: inherit; color: var(--text); }
   color: var(--muted);
   font-size: .95rem;
   line-height: 1.45;
+}
+
+.login-demo-note {
+  margin: 0;
+  padding: .55rem .7rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.4;
 }
 
 .login-form {
@@ -6185,8 +6191,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   align-items: center;
   font-size: .67rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .01em;
   padding: .1rem .35rem;
   border-radius: var(--radius-pill);
   background: color-mix(in srgb, var(--accent) 15%, var(--surface));
@@ -6300,8 +6305,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .sidebar-storage-popup-title {
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--muted);
   margin-bottom: .15rem;
 }
@@ -6912,8 +6916,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .setlist-song-note-label {
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .03em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--song-item-muted);
 }
 
@@ -7022,8 +7025,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: .45rem 0 .2rem;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  letter-spacing: .01em;
   color: var(--muted);
 }
 
@@ -8637,8 +8639,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   font-size: .8rem;
   font-weight: 700;
   color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .01em;
   margin-bottom: .5rem;
 }
 
@@ -8704,13 +8705,6 @@ input, select, textarea { font: inherit; color: var(--text); }
   display: flex;
   flex-direction: column;
   gap: .35rem;
-}
-
-.profile-account-kicker {
-  color: var(--muted);
-  font-size: .76rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
 }
 
 .profile-account-hero-copy h1 {
@@ -9167,14 +9161,6 @@ input, select, textarea { font: inherit; color: var(--text); }
 .setlist-subtitle {
   font-size: var(--page-copy-size);
   color: var(--muted);
-}
-
-.bands-section-kicker {
-  margin: 0;
-  color: var(--muted);
-  font-size: .78rem;
-  text-transform: uppercase;
-  letter-spacing: .05em;
 }
 
 .bands-create-card,
@@ -10320,8 +10306,7 @@ input, select, textarea { font: inherit; color: var(--text); }
   margin: 0 0 .9rem;
   font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: .01em;
   color: var(--muted, #888);
 }
 
@@ -10671,9 +10656,8 @@ input, select, textarea { font: inherit; color: var(--text); }
 .stageplot-palette-category-name {
   font-size: .68rem;
   font-weight: 700;
-  text-transform: uppercase;
   color: var(--muted);
-  letter-spacing: .08em;
+  letter-spacing: .01em;
   padding: 0 .15rem;
 }
 
@@ -10997,8 +10981,7 @@ input, select, textarea { font: inherit; color: var(--text); }
 .stageplot-legend-heading {
   font-size: .72rem;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .01em;
   color: var(--muted);
   margin: 0 0 .4rem;
 }
@@ -11585,8 +11568,7 @@ input.stageplot-legend-number:focus {
 .chord-caret-popover-row-label {
   font-size: .72rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: .01em;
   color: var(--muted);
 }
 
