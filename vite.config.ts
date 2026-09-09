@@ -188,6 +188,13 @@ export default defineConfig(({ command }) => ({
       : (resolveDevBaseFromProxyUri() ?? '/')),
   server: {
     host: true,
+    // 5173 is Vite's default; naming it explicitly lets `dev:demo` claim the one port the
+    // test.manriquez.no proxy forwards to. strictPort only under a devOrigin, so a plain
+    // `npm run dev` still falls through to the next free port as before -- and starting a
+    // second project's `dev:demo` while one holds the port fails loudly instead of drifting
+    // to a port the proxy isn't pointed at.
+    port: process.env.PORT ? Number(process.env.PORT) : 5173,
+    strictPort: Boolean(devOrigin),
     allowedHosts: Array.from(
       new Set([
         'localhost',

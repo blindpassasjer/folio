@@ -45,6 +45,12 @@ sample data. Deployed automatically from this repo by
 [.github/workflows/deploy-demo.yml](.github/workflows/deploy-demo.yml); the real product is
 self-hosted only (see below).
 
+To serve this demo from a test host, run `npm run dev:demo` — it starts Vite with the mock
+backend, serves from the domain root, trusts `test.manriquez.no`, and points HMR through that
+host's TLS. It binds Vite's port with `strictPort`, so only one project's `dev:demo` (gigboy
+or cleep) can hold `test.manriquez.no` at a time — stop the other one first. Change the host
+via `VITE_DEV_ORIGIN` in [package.json](package.json), or the port with `PORT=… npm run dev:demo`.
+
 ## Screenshots
 
 <p align="center">
