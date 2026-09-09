@@ -8,6 +8,17 @@ pre-1.0: minor bumps for features, patch bumps for fixes.
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-09-09
+
+Tooling only. No changes to features or data.
+
+### Internal
+- `npm run dev:demo` now pins the demo to `https://test.manriquez.no` and
+  binds Vite's port with `strictPort`, so it always lands on the port the
+  test-host proxy forwards to and a second project's `dev:demo` fails loudly
+  instead of drifting to a free port. Plain `npm run dev` is unaffected;
+  override with `PORT` / `VITE_DEV_ORIGIN`.
+
 ## [0.1.2] - 2026-09-08
 
 More design-system work. No changes to features or data.
